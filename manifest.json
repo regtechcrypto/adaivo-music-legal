@@ -1,0 +1,61 @@
+{
+  "release": "2026-07-23.1",
+  "effectiveDate": "2026-07-23",
+  "generatedFrom": "c810e47c83771fafea1366a6a58d4762c553b751",
+  "documents": [
+    {
+      "locale": "en",
+      "document": "licenses",
+      "source": "content/en/licenses.md",
+      "page": "en/licenses/",
+      "markdown": "releases/2026-07-23.1/en/licenses.md",
+      "bytes": 2840,
+      "sha256": "f6c17c51bcdd055a64bc171c609f60878f3cf68546468ea49ea7488faeaca5dd"
+    },
+    {
+      "locale": "en",
+      "document": "privacy",
+      "source": "content/en/privacy.md",
+      "page": "en/privacy/",
+      "markdown": "releases/2026-07-23.1/en/privacy.md",
+      "bytes": 3834,
+      "sha256": "541fca498f28a2ef9a3b9efd39fcb5c30d8696fc7564ab3b2459702c09c9fbce"
+    },
+    {
+      "locale": "en",
+      "document": "terms",
+      "source": "content/en/terms.md",
+      "page": "en/terms/",
+      "markdown": "releases/2026-07-23.1/en/terms.md",
+      "bytes": 4907,
+      "sha256": "fc738e5f13902d5d1b05765d2aa3fb7fa810d8b6c0da7f75743012ed04853390"
+    },
+    {
+      "locale": "zh-Hans",
+      "document": "licenses",
+      "source": "content/zh-Hans/licenses.md",
+      "page": "zh-Hans/licenses/",
+      "markdown": "releases/2026-07-23.1/zh-Hans/licenses.md",
+      "bytes": 2808,
+      "sha256": "fd653840152161a6faefd703a003b194c2ff91951771675904eb393b497490e4"
+    },
+    {
+      "locale": "zh-Hans",
+      "document": "privacy",
+      "source": "content/zh-Hans/privacy.md",
+      "page": "zh-Hans/privacy/",
+      "markdown": "releases/2026-07-23.1/zh-Hans/privacy.md",
+      "bytes": 3553,
+      "sha256": "341b10f094b419910db9e75f8a9c117b1150bbf2bb69f93f2a7ceda8d1039812"
+    },
+    {
+      "locale": "zh-Hans",
+      "document": "terms",
+      "source": "content/zh-Hans/terms.md",
+      "page": "zh-Hans/terms/",
+      "markdown": "releases/2026-07-23.1/zh-Hans/terms.md",
+      "bytes": 4304,
+      "sha256": "25ba71ba7399fbebd6a5d8d6b1fdb21f40f02bae306b9007dc8d791ee6f9f73a"
+    }
+  ]
+}
