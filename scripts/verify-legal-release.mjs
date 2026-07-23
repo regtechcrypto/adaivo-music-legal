@@ -58,14 +58,16 @@ export function validateSource(text, locale, document, release, effectiveDate) {
   if (document === "licenses") for (const [name, version, license] of runtimeInventory) {
     const archiveName = name.includes("/") ? name.split("/").at(-1) : name;
     const resolvedSource = `https://registry.npmjs.org/${name}/-/${archiveName}-${version}.tgz`;
-    assert(text.includes(`\`${name}\``), `${locale}/${document}: missing runtime package ${name}`);
-    assert(text.includes(`\`${version}\``), `${locale}/${document}: missing runtime version ${name}@${version}`);
-    assert(text.includes(`\`${license}\``), `${locale}/${document}: missing runtime license ${name}`);
-    assert(text.includes(resolvedSource), `${locale}/${document}: missing resolved runtime source ${name}`);
+    const row = text.split("\n").find((line) => line.startsWith(`- \`${name}\``));
+    assert(row, `${locale}/${document}: missing runtime package ${name}`);
+    assert(row.includes(`\`${version}\``), `${locale}/${document}: missing runtime version ${name}@${version}`);
+    assert(row.includes(resolvedSource), `${locale}/${document}: missing resolved runtime source ${name}`);
+    assert(row.includes(locale === "en" ? "repository: Not recorded" : "仓库：未记录"), `${locale}/${document}: missing explicit repository field ${name}`);
+    assert(row.includes(locale === "en" ? "copyright: Not recorded" : "版权：未记录"), `${locale}/${document}: missing explicit copyright field ${name}`);
+    assert(row.includes(`\`${license}\``), `${locale}/${document}: missing runtime license ${name}`);
   }
   if (document === "licenses") {
     assert.equal([...text.matchAll(/^- `[^`]+` .*https:\/\/registry\.npmjs\.org\//gm)].length, runtimeInventory.length, `${locale}/${document}: runtime inventory count mismatch`);
-    assert(text.includes(locale === "en" ? "copyright: Not recorded" : "版权：未记录"), `${locale}/${document}: missing explicit unavailable copyright marker`);
   }
 }
 
@@ -116,6 +118,11 @@ async function verify() {
     const page = await readFile(resolve(root, "site", entry.page, "index.html"), "utf8");
     assert(page.includes(`../../releases/${release}/${locale}/${document}.md`), `${locale}/${document}: broken canonical link`);
     assert(!/<script|<img|https?:\/\/[^"]+\.(js|css)/i.test(page), `${locale}/${document}: forbidden page asset`);
+    if (locale === "zh-Hans" && document === "licenses") for (const [name, version] of runtimeInventory) {
+      const archiveName = name.includes("/") ? name.split("/").at(-1) : name;
+      const resolvedSource = `https://registry.npmjs.org/${name}/-/${archiveName}-${version}.tgz`;
+      assert(page.includes(`href="${resolvedSource}"`), `zh-Hans/licenses: malformed generated href for ${name}`);
+    }
   }
   const index = await readFile(resolve(root, "site/index.html"), "utf8");
   for (const entry of manifest.documents) assert(index.includes(`href="${entry.page}"`), `broken index link ${entry.page}`);
@@ -139,11 +146,12 @@ if (process.argv.includes("--self-test")) {
   const licensesSource = resolve(root, "content/en/licenses.md");
   const originalLicenses = await readFile(licensesSource, "utf8");
   try {
-    await writeFile(licensesSource, `${originalLicenses}\nhttps://www.apache.org/licenses/LICENSE-2.0\"onmouseover=\"alert\n`);
+    await writeFile(licensesSource, `${originalLicenses}\nhttps://www.apache.org/licenses/LICENSE-2.0?x=1&y=2\" onmouseover=\"alert\n`);
     const hostileBuild = spawnSync(process.execPath, ["scripts/build-manifest.mjs", "--release", "2026-07-23.1", "--effective-date", "2026-07-23"], { cwd: root, encoding: "utf8" });
     assert.equal(hostileBuild.status, 0, hostileBuild.stderr);
     const hostilePage = await readFile(resolve(root, "site/en/licenses/index.html"), "utf8");
-    assert(!hostilePage.includes('href=\"https://www.apache.org/licenses/LICENSE-2.0\"onmouseover='), "href attribute must escape hostile quotes");
+    assert(hostilePage.includes('href="https://www.apache.org/licenses/LICENSE-2.0?x=1&amp;y=2"'), "href attribute must escape hostile link data");
+    assert(!hostilePage.includes('href=\"https://www.apache.org/licenses/LICENSE-2.0?x=1&y=2\" onmouseover='), "hostile quote must not create an attribute");
   } finally {
     await writeFile(licensesSource, originalLicenses);
     const restore = spawnSync(process.execPath, ["scripts/build-manifest.mjs", "--release", "2026-07-23.1", "--effective-date", "2026-07-23"], { cwd: root, encoding: "utf8" });

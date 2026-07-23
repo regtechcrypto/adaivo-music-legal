@@ -34,19 +34,25 @@ function normalize(value) {
 }
 
 function inline(text) {
-  let escaped = text.replaceAll("&", "&amp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;");
-  escaped = escaped.replace(/`([^`]+)`/g, "<code>$1</code>");
-  escaped = escaped.replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>");
-  escaped = escaped.replace(/(https:\/\/[^\s<]+)/g, (raw) => {
+  const escapeText = (value) => value.replaceAll("&", "&amp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;");
+  const formatText = (value) => escapeText(value)
+    .replace(/`([^`]+)`/g, "<code>$1</code>")
+    .replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>");
+  const pattern = /https:\/\/[^\s<>"';；,，。]+/g;
+  let output = "";
+  let cursor = 0;
+  for (const match of text.matchAll(pattern)) {
+    output += formatText(text.slice(cursor, match.index));
+    const raw = match[0];
     const suffix = /[.,;:，。；：]$/.test(raw) ? raw.slice(-1) : "";
     const href = suffix ? raw.slice(0, -1) : raw;
     const parsed = new URL(href);
     if (!allowedHosts.has(parsed.hostname)) throw new Error(`URL not allowed: ${parsed}`);
     const attribute = parsed.href.replaceAll("&", "&amp;").replaceAll("\"", "&quot;").replaceAll("<", "&lt;").replaceAll(">", "&gt;");
-    const label = href.replaceAll("&", "&amp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;");
-    return `<a href="${attribute}" rel="noopener noreferrer">${label}</a>${suffix}`;
-  });
-  return escaped;
+    output += `<a href="${attribute}" rel="noopener noreferrer">${escapeText(href)}</a>${escapeText(suffix)}`;
+    cursor = match.index + raw.length;
+  }
+  return output + formatText(text.slice(cursor));
 }
 
 function renderMarkdown(markdown) {

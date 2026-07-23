@@ -9,8 +9,8 @@
       "source": "content/en/licenses.md",
       "page": "en/licenses/",
       "markdown": "releases/2026-07-23.1/en/licenses.md",
-      "bytes": 7439,
-      "sha256": "78f3b9547638ac331a8402b16bc13c9da29c176fca2e8077cb91653f2e35add3"
+      "bytes": 8219,
+      "sha256": "24dbab5503a8eab0ac8da0597b6edb5e651918e34b0e495c73c17a300e642d9c"
     },
     {
       "locale": "en",
@@ -36,8 +36,8 @@
       "source": "content/zh-Hans/licenses.md",
       "page": "zh-Hans/licenses/",
       "markdown": "releases/2026-07-23.1/zh-Hans/licenses.md",
-      "bytes": 7425,
-      "sha256": "55505afae1b1b1a8851280d29baf59c9ad6d5036b0d5a0b17f911debcf1c6f47"
+      "bytes": 8061,
+      "sha256": "2fb7eb97285365cf8ff840ff7d2fab07dda5b25f1ce6ed6bab8b568012a1a1b5"
     },
     {
       "locale": "zh-Hans",
