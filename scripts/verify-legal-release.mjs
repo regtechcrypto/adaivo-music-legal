@@ -112,6 +112,8 @@ async function verify() {
   assert.equal(manifest.release, release);
   assert.equal(manifest.effectiveDate, effectiveDate);
   assert.equal(manifest.documents.length, 6);
+  const css = await readFile(resolve(root, "site/assets/legal.css"), "utf8");
+  const cssFingerprint = createHash("sha256").update(css).digest("hex").slice(0, 16);
   for (const locale of locales) for (const document of documents) {
     const entry = manifest.documents.find((item) => item.locale === locale && item.document === document);
     assert(entry, `missing ${locale}/${document}`);
@@ -124,6 +126,7 @@ async function verify() {
     assert.equal(createHash("sha256").update(canonical).digest("hex"), entry.sha256, `${locale}/${document}: hash mismatch`);
     assert.equal(canonical.toString("utf8"), source.replace(/\r\n?/g, "\n").normalize("NFC").replace(/\n?$/, "\n"));
     const page = await readFile(resolve(root, "site", entry.page, "index.html"), "utf8");
+    assert(page.includes(`href="../../assets/legal.css?v=${cssFingerprint}"`), `${locale}/${document}: stylesheet fingerprint mismatch`);
     assert(page.includes(`../../releases/${release}/${locale}/${document}.md`), `${locale}/${document}: broken canonical link`);
     assert(!/<script|<img|https?:\/\/[^"]+\.(js|css)/i.test(page), `${locale}/${document}: forbidden page asset`);
     if (locale === "zh-Hans" && document === "licenses") for (const entry of runtimeInventory) {
@@ -132,7 +135,7 @@ async function verify() {
   }
   const index = await readFile(resolve(root, "site/index.html"), "utf8");
   for (const entry of manifest.documents) assert(index.includes(`href="${entry.page}"`), `broken index link ${entry.page}`);
-  const css = await readFile(resolve(root, "site/assets/legal.css"), "utf8");
+  assert(index.includes(`href="assets/legal.css?v=${cssFingerprint}"`), "index stylesheet fingerprint mismatch");
   assert(css.includes("main a{overflow-wrap:anywhere;word-break:break-word}"), "main-content links must wrap at narrow viewports");
   await verifyDeterministicBuild(release, effectiveDate);
 }
