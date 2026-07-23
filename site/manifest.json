@@ -1,4 +1,5 @@
 {
+  "schemaVersion": 1,
   "release": "2026-07-23.1",
   "effectiveDate": "2026-07-23",
   "generatedFrom": "c810e47c83771fafea1366a6a58d4762c553b751",
@@ -9,8 +10,8 @@
       "source": "content/en/licenses.md",
       "page": "en/licenses/",
       "markdown": "https://regtechcrypto.github.io/adaivo-music-legal/releases/2026-07-23.1/en/licenses.md",
-      "bytes": 146417,
-      "sha256": "807641db923dfc2c546ec21334831594ec27e413c850deacab36d73e0c72f9c1"
+      "bytes": 158269,
+      "sha256": "d9963f73b03795493121965823c0b23b8af696d848dad9fbddedb12a834d4e61"
     },
     {
       "locale": "en",
@@ -36,8 +37,8 @@
       "source": "content/zh-Hans/licenses.md",
       "page": "zh-Hans/licenses/",
       "markdown": "https://regtechcrypto.github.io/adaivo-music-legal/releases/2026-07-23.1/zh-Hans/licenses.md",
-      "bytes": 145001,
-      "sha256": "dc6ff258374b2417aaccccf74eefc4214d73c4da0d7c935691b43dfd5d3377c5"
+      "bytes": 161473,
+      "sha256": "298906b782d34ef68e525e7ae49b39e8b28eff87bee352d4bd647572ee149793"
     },
     {
       "locale": "zh-Hans",

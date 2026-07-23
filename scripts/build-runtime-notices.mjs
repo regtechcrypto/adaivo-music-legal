@@ -36,14 +36,14 @@ for (const entry of inventory.entries) {
 }
 
 const enRows = inventory.entries.map((entry) =>
-  `- \`${entry.name}\` \`${entry.version}\` [\`${entry.path}\`] — source: ${entry.resolved}; repository: Not recorded; copyright: Not recorded; license: \`${entry.license}\`${entry.patched ? "; patched locally, upstream license retained" : ""}.`
+  `- package: ${entry.name}; version: ${entry.version}; lock path: ${entry.path}; source: ${entry.resolved}; repository: Not recorded; copyright: Not recorded; license: ${entry.license}${entry.patched ? "; patched locally, upstream license retained" : ""}.`
 ).join("\n");
 const zhRows = inventory.entries.map((entry) =>
-  `- \`${entry.name}\` \`${entry.version}\` [\`${entry.path}\`] — 源链接：${entry.resolved}；仓库：未记录；版权：未记录；许可：\`${entry.license}\`${entry.patched ? "；应用本地补丁并保留上游许可" : ""}。`
+  `- 软件包：${entry.name}；版本：${entry.version}；锁路径：${entry.path}；源链接：${entry.resolved}；仓库：未记录；版权：未记录；许可：${entry.license}${entry.patched ? "；应用本地补丁并保留上游许可" : ""}。`
 ).join("\n");
 const usedLicenses = [...new Set(inventory.entries.flatMap((entry) => options(entry.license)))].sort();
-const enLinks = usedLicenses.map((license) => `- \`${license}\`: ${licenseLinks[license]}`).join("\n");
-const zhLinks = usedLicenses.map((license) => `- \`${license}\`：${licenseLinks[license]}`).join("\n");
+const enLinks = usedLicenses.map((license) => `- ${license}: ${licenseLinks[license]}`).join("\n");
+const zhLinks = usedLicenses.map((license) => `- ${license}：${licenseLinks[license]}`).join("\n");
 
 const en = `# Adaivo Music Third-Party Notices
 
@@ -52,9 +52,9 @@ const en = `# Adaivo Music Third-Party Notices
 
 ## Scope
 
-These are the notices included for the current release built from Adaivo Music commit \`${inventory.sourceCommit}\`. The JavaScript inventory is the complete ${inventory.count}-entry runtime closure deterministically derived from the exact package-lock v3 root runtime dependencies, dependencies, optional dependencies, and peer dependencies using package-lock node_modules resolution.
+These are the notices included for the current release built from Adaivo Music commit ${inventory.sourceCommit}. The JavaScript inventory is the complete ${inventory.count}-entry runtime closure deterministically derived from the exact package-lock v3 root runtime dependencies, dependencies, optional dependencies, and peer dependencies using package-lock node_modules resolution.
 
-The lock metadata records no repository or copyright fields for these entries. “Not recorded” is explicit and no value is inferred. Resolved source archives are separate from repository metadata. No entry has a missing or unidentified license, and none delegates its license to another named file. The three multi-license expressions are preserved exactly. Local patches apply to \`react-native-blob-util\` and \`react-native-track-player\`; their upstream licenses remain identified.
+The lock metadata records no repository or copyright fields for these entries. “Not recorded” is explicit and no value is inferred. Resolved source archives are separate from repository metadata. No entry has a missing or unidentified license, and none delegates its license to another named file. The three multi-license expressions are preserved exactly. Local patches apply to react-native-blob-util and react-native-track-player; their upstream licenses remain identified.
 
 This JavaScript closure is not a binary-derived native inventory. Final iOS and Android store binaries require regenerated and reviewed native dependency/license reports before store launch. This document does not claim native completeness.
 
@@ -84,9 +84,9 @@ const zh = `# Adaivo Music 第三方声明
 
 ## 范围
 
-这是基于 Adaivo Music 提交 \`${inventory.sourceCommit}\` 构建的当前版本所含声明。JavaScript 清单是从精确的 package-lock v3 根运行时依赖、dependencies、optionalDependencies 和 peerDependencies 按 package-lock node_modules 解析规则确定性推导出的完整 ${inventory.count} 项运行时闭包。
+这是基于 Adaivo Music 提交 ${inventory.sourceCommit} 构建的当前版本所含声明。JavaScript 清单是从精确的 package-lock v3 根运行时依赖、dependencies、optionalDependencies 和 peerDependencies 按 package-lock node_modules 解析规则确定性推导出的完整 ${inventory.count} 项运行时闭包。
 
-锁文件元数据没有记录这些条目的仓库或版权字段。“未记录”为明确状态，本文不作推断。解析后源归档与仓库元数据分开列示。没有条目缺失许可、使用未识别许可，或将许可指向另一个命名文件。三个多许可表达式按原样保留。\`react-native-blob-util\` 和 \`react-native-track-player\` 应用本地补丁，其上游许可标识保持不变。
+锁文件元数据没有记录这些条目的仓库或版权字段。“未记录”为明确状态，本文不作推断。解析后源归档与仓库元数据分开列示。没有条目缺失许可、使用未识别许可，或将许可指向另一个命名文件。三个多许可表达式按原样保留。react-native-blob-util 和 react-native-track-player 应用本地补丁，其上游许可标识保持不变。
 
 此 JavaScript 闭包不是从原生二进制文件生成的清单。应用商店上线前，必须从最终 iOS 和 Android 商店二进制文件重新生成并审阅原生依赖与许可报告。本文不声称原生清单完整。
 

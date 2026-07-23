@@ -43,10 +43,17 @@ export function validateManifestMarkdownUrl(value, release, locale, document) {
   return markdownUrl;
 }
 
+export function validateManifestRoot(manifest) {
+  assert.deepEqual(Object.keys(manifest).sort(), ["documents", "effectiveDate", "generatedFrom", "release", "schemaVersion"], "manifest root fields mismatch");
+  assert.equal(manifest.schemaVersion, 1, "manifest schemaVersion must equal 1");
+  assert(Number.isInteger(manifest.schemaVersion), "manifest schemaVersion must be an integer");
+}
+
 export function validateSource(text, locale, document, release, effectiveDate) {
   assert(text.includes(release), `${locale}/${document}: release mismatch`);
   assert(text.includes(effectiveDate), `${locale}/${document}: effective-date mismatch`);
   assert(!/<\/?[A-Za-z][^>]*>|<script|!\[[^\]]*\]\(/i.test(text), `${locale}/${document}: raw HTML/script/image`);
+  assert(!text.includes("`"), `${locale}/${document}: inline code/backticks are unsupported`);
   assert(!/\bUNKNOWN\b/.test(text), `${locale}/${document}: UNKNOWN license entry`);
   if (locale === "en") for (const section of required[document]) assert(text.toLowerCase().includes(section.toLowerCase()), `${locale}/${document}: missing ${section}`);
   if (locale === "zh-Hans") assert(text.includes("英文版本为准"), `${locale}/${document}: missing English-controls clause`);
@@ -57,18 +64,19 @@ export function validateSource(text, locale, document, release, effectiveDate) {
   }
   if (document === "licenses") assert(!/Adaivo.{0,50}(is open source|licensed under (the )?(MIT|Apache))/i.test(text), `${locale}/${document}: Adaivo content marked OSS`);
   if (document === "licenses") for (const entry of runtimeInventory) {
-    const row = text.split("\n").find((line) => line.includes(`[\`${entry.path}\`]`));
+    const row = text.split("\n").find((line) => line.includes(locale === "en" ? `lock path: ${entry.path};` : `锁路径：${entry.path}；`));
     assert(row, `${locale}/${document}: missing runtime package path ${entry.path}`);
-    assert(row.includes(`\`${entry.name}\``), `${locale}/${document}: missing runtime package ${entry.name}`);
-    assert(row.includes(`\`${entry.version}\``), `${locale}/${document}: missing runtime version ${entry.path}`);
+    assert(row.includes(locale === "en" ? `package: ${entry.name};` : `软件包：${entry.name}；`), `${locale}/${document}: missing runtime package ${entry.name}`);
+    assert(row.includes(locale === "en" ? `version: ${entry.version};` : `版本：${entry.version}；`), `${locale}/${document}: missing runtime version ${entry.path}`);
     assert(row.includes(entry.resolved), `${locale}/${document}: missing resolved runtime source ${entry.path}`);
     assert(row.includes(locale === "en" ? "repository: Not recorded" : "仓库：未记录"), `${locale}/${document}: missing explicit repository field ${entry.path}`);
     assert(row.includes(locale === "en" ? "copyright: Not recorded" : "版权：未记录"), `${locale}/${document}: missing explicit copyright field ${entry.path}`);
-    assert(row.includes(`\`${entry.license}\``), `${locale}/${document}: missing runtime license ${entry.path}`);
+    assert(row.includes(locale === "en" ? `license: ${entry.license}` : `许可：${entry.license}`), `${locale}/${document}: missing runtime license ${entry.path}`);
     if (entry.patched) assert(row.includes(locale === "en" ? "patched locally" : "应用本地补丁"), `${locale}/${document}: missing patched-package disclosure ${entry.path}`);
   }
   if (document === "licenses") {
-    assert.equal([...text.matchAll(/^- `[^`]+` .*https:\/\/registry\.npmjs\.org\//gm)].length, runtimeInventory.length, `${locale}/${document}: runtime inventory count mismatch`);
+    const rowPattern = locale === "en" ? /^- package: .*source: https:\/\/registry\.npmjs\.org\//gm : /^- 软件包：.*源链接：https:\/\/registry\.npmjs\.org\//gm;
+    assert.equal([...text.matchAll(rowPattern)].length, runtimeInventory.length, `${locale}/${document}: runtime inventory count mismatch`);
   }
 }
 
@@ -108,6 +116,7 @@ async function verifyDeterministicBuild(release, effectiveDate) {
 async function verify() {
   const { release, effectiveDate } = metadataArgs();
   const manifest = JSON.parse(await readFile(resolve(root, "manifest.json"), "utf8"));
+  validateManifestRoot(manifest);
   assert.equal(await readFile(resolve(root, "site/manifest.json"), "utf8"), `${JSON.stringify(manifest, null, 2)}\n`);
   assert.equal(manifest.release, release);
   assert.equal(manifest.effectiveDate, effectiveDate);
@@ -141,6 +150,13 @@ async function verify() {
 }
 
 if (process.argv.includes("--self-test")) {
+  const validRoot = { schemaVersion: 1, release: "x", effectiveDate: "x", generatedFrom: "x", documents: [] };
+  validateManifestRoot(validRoot);
+  assert.throws(() => validateManifestRoot({ ...validRoot, schemaVersion: 2 }), /schemaVersion/);
+  assert.throws(() => validateManifestRoot({ ...validRoot, schemaVersion: 1.5 }), /schemaVersion/);
+  const { schemaVersion: omittedSchemaVersion, ...missingSchema } = validRoot;
+  assert.throws(() => validateManifestRoot(missingSchema), /root fields/);
+  assert.throws(() => validateManifestRoot({ ...validRoot, extra: true }), /root fields/);
   const validManifestUrl = "https://regtechcrypto.github.io/adaivo-music-legal/releases/2026-07-23.1/en/terms.md";
   assert.equal(validateManifestMarkdownUrl(validManifestUrl, "2026-07-23.1", "en", "terms").href, validManifestUrl);
   assert.throws(() => validateManifestMarkdownUrl(validManifestUrl.replace("https:", "http:"), "2026-07-23.1", "en", "terms"), /HTTPS/);

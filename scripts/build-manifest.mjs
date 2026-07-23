@@ -37,7 +37,6 @@ function normalize(value) {
 function inline(text) {
   const escapeText = (value) => value.replaceAll("&", "&amp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;");
   const formatText = (value) => escapeText(value)
-    .replace(/`([^`]+)`/g, "<code>$1</code>")
     .replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>");
   const pattern = /https:\/\/[^\s<>"';；,，。]+/g;
   let output = "";
@@ -110,7 +109,7 @@ for (const locale of locales) {
   }
 }
 entries.sort((a, b) => `${a.locale}/${a.document}`.localeCompare(`${b.locale}/${b.document}`));
-const manifest = { release, effectiveDate, generatedFrom: "c810e47c83771fafea1366a6a58d4762c553b751", documents: entries };
+const manifest = { schemaVersion: 1, release, effectiveDate, generatedFrom: "c810e47c83771fafea1366a6a58d4762c553b751", documents: entries };
 const manifestText = `${JSON.stringify(manifest, null, 2)}\n`;
 await writeFile(resolve(outputRoot, "manifest.json"), manifestText);
 await mkdir(resolve(outputRoot, "site/assets"), { recursive: true });
