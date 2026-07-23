@@ -132,6 +132,8 @@ async function verify() {
   }
   const index = await readFile(resolve(root, "site/index.html"), "utf8");
   for (const entry of manifest.documents) assert(index.includes(`href="${entry.page}"`), `broken index link ${entry.page}`);
+  const css = await readFile(resolve(root, "site/assets/legal.css"), "utf8");
+  assert(css.includes("main a{overflow-wrap:anywhere;word-break:break-word}"), "main-content links must wrap at narrow viewports");
   await verifyDeterministicBuild(release, effectiveDate);
 }
 
