@@ -4,9 +4,10 @@ import { dirname, resolve } from "node:path";
 import process from "node:process";
 
 const root = resolve(new URL("..", import.meta.url).pathname);
+const publicBaseUrl = "https://regtechcrypto.github.io/adaivo-music-legal/";
 const locales = ["en", "zh-Hans"];
 const documents = ["licenses", "privacy", "terms"];
-const allowedHosts = new Set(["registry.npmjs.org", "www.apache.org", "opensource.org", "www.openssl.org"]);
+const allowedHosts = new Set(["registry.npmjs.org", "spdx.org", "www.apache.org", "opensource.org", "www.openssl.org"]);
 
 function arg(name) {
   const i = process.argv.indexOf(name);
@@ -94,7 +95,7 @@ for (const locale of locales) {
 <body><header><a class="brand" href="../../">Adaivo Music</a><nav aria-label="Legal documents">${nav}</nav></header><main>${renderMarkdown(markdown)}</main><footer>© 2026 Adaivo. All rights reserved. <a href="../../releases/${release}/${locale}/${document}.md">Canonical Markdown</a></footer></body></html>
 `;
     await writeFile(resolve(outputRoot, pagePath), html);
-    entries.push({ locale, document, source, page: `${locale}/${document}/`, markdown: `releases/${release}/${locale}/${document}.md`, bytes: bytes.length, sha256: createHash("sha256").update(bytes).digest("hex") });
+    entries.push({ locale, document, source, page: `${locale}/${document}/`, markdown: `${publicBaseUrl}releases/${release}/${locale}/${document}.md`, bytes: bytes.length, sha256: createHash("sha256").update(bytes).digest("hex") });
   }
 }
 entries.sort((a, b) => `${a.locale}/${a.document}`.localeCompare(`${b.locale}/${b.document}`));

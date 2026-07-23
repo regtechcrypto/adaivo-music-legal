@@ -7,59 +7,693 @@
 
 ## 范围
 
-这是基于 Adaivo Music 提交 `c810e47c83771fafea1366a6a58d4762c553b751` 构建的当前版本所含声明，涵盖 `mobile/package-lock.json` 中记录的直接运行时 JavaScript 依赖，以及从已提交锁定/构建文件中可识别的 iOS Pods 与 Android 运行时组件系列。仓库不含完整的 Android 发布版解析后许可报告，因此本文不声称是完整的原生传递依赖清单。上线前，发布工程必须根据最终商店二进制文件重新生成并审阅原生声明。
+这是基于 Adaivo Music 提交 `c810e47c83771fafea1366a6a58d4762c553b751` 构建的当前版本所含声明。JavaScript 清单是从精确的 package-lock v3 根运行时依赖、dependencies、optionalDependencies 和 peerDependencies 按 package-lock node_modules 解析规则确定性推导出的完整 660 项运行时闭包。
+
+锁文件元数据没有记录这些条目的仓库或版权字段。“未记录”为明确状态，本文不作推断。解析后源归档与仓库元数据分开列示。没有条目缺失许可、使用未识别许可，或将许可指向另一个命名文件。三个多许可表达式按原样保留。`react-native-blob-util` 和 `react-native-track-player` 应用本地补丁，其上游许可标识保持不变。
+
+此 JavaScript 闭包不是从原生二进制文件生成的清单。应用商店上线前，必须从最终 iOS 和 Android 商店二进制文件重新生成并审阅原生依赖与许可报告。本文不声称原生清单完整。
 
 Adaivo 创作的音乐、法律文本、代码及品牌材料不是开源内容，也不通过本声明授予许可。
 
-## 运行时 JavaScript 软件包
+## 运行时 JavaScript 清单
 
-以下直接运行时清单来自该源代码提交中精确的 `mobile/package-lock.json` 软件包元数据。“未记录”表示锁文件元数据没有仓库或版权字段；本文未推断仓库或版权。源链接是锁文件记录的精确解析后软件包归档，与仓库字段分开列示。
+- `@babel/code-frame` `7.29.7` [`node_modules/@babel/code-frame`] — 源链接：https://registry.npmjs.org/@babel/code-frame/-/code-frame-7.29.7.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `@babel/compat-data` `7.29.7` [`node_modules/@babel/compat-data`] — 源链接：https://registry.npmjs.org/@babel/compat-data/-/compat-data-7.29.7.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `@babel/core` `7.29.7` [`node_modules/@babel/core`] — 源链接：https://registry.npmjs.org/@babel/core/-/core-7.29.7.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `@babel/generator` `7.29.7` [`node_modules/@babel/generator`] — 源链接：https://registry.npmjs.org/@babel/generator/-/generator-7.29.7.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `@babel/helper-annotate-as-pure` `7.29.7` [`node_modules/@babel/helper-annotate-as-pure`] — 源链接：https://registry.npmjs.org/@babel/helper-annotate-as-pure/-/helper-annotate-as-pure-7.29.7.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `@babel/helper-compilation-targets` `7.29.7` [`node_modules/@babel/helper-compilation-targets`] — 源链接：https://registry.npmjs.org/@babel/helper-compilation-targets/-/helper-compilation-targets-7.29.7.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `@babel/helper-create-class-features-plugin` `7.29.7` [`node_modules/@babel/helper-create-class-features-plugin`] — 源链接：https://registry.npmjs.org/@babel/helper-create-class-features-plugin/-/helper-create-class-features-plugin-7.29.7.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `@babel/helper-create-regexp-features-plugin` `7.29.7` [`node_modules/@babel/helper-create-regexp-features-plugin`] — 源链接：https://registry.npmjs.org/@babel/helper-create-regexp-features-plugin/-/helper-create-regexp-features-plugin-7.29.7.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `@babel/helper-define-polyfill-provider` `0.6.8` [`node_modules/@babel/helper-define-polyfill-provider`] — 源链接：https://registry.npmjs.org/@babel/helper-define-polyfill-provider/-/helper-define-polyfill-provider-0.6.8.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `@babel/helper-globals` `7.29.7` [`node_modules/@babel/helper-globals`] — 源链接：https://registry.npmjs.org/@babel/helper-globals/-/helper-globals-7.29.7.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `@babel/helper-member-expression-to-functions` `7.29.7` [`node_modules/@babel/helper-member-expression-to-functions`] — 源链接：https://registry.npmjs.org/@babel/helper-member-expression-to-functions/-/helper-member-expression-to-functions-7.29.7.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `@babel/helper-module-imports` `7.29.7` [`node_modules/@babel/helper-module-imports`] — 源链接：https://registry.npmjs.org/@babel/helper-module-imports/-/helper-module-imports-7.29.7.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `@babel/helper-module-transforms` `7.29.7` [`node_modules/@babel/helper-module-transforms`] — 源链接：https://registry.npmjs.org/@babel/helper-module-transforms/-/helper-module-transforms-7.29.7.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `@babel/helper-optimise-call-expression` `7.29.7` [`node_modules/@babel/helper-optimise-call-expression`] — 源链接：https://registry.npmjs.org/@babel/helper-optimise-call-expression/-/helper-optimise-call-expression-7.29.7.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `@babel/helper-plugin-utils` `7.29.7` [`node_modules/@babel/helper-plugin-utils`] — 源链接：https://registry.npmjs.org/@babel/helper-plugin-utils/-/helper-plugin-utils-7.29.7.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `@babel/helper-remap-async-to-generator` `7.29.7` [`node_modules/@babel/helper-remap-async-to-generator`] — 源链接：https://registry.npmjs.org/@babel/helper-remap-async-to-generator/-/helper-remap-async-to-generator-7.29.7.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `@babel/helper-replace-supers` `7.29.7` [`node_modules/@babel/helper-replace-supers`] — 源链接：https://registry.npmjs.org/@babel/helper-replace-supers/-/helper-replace-supers-7.29.7.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `@babel/helper-skip-transparent-expression-wrappers` `7.29.7` [`node_modules/@babel/helper-skip-transparent-expression-wrappers`] — 源链接：https://registry.npmjs.org/@babel/helper-skip-transparent-expression-wrappers/-/helper-skip-transparent-expression-wrappers-7.29.7.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `@babel/helper-string-parser` `7.29.7` [`node_modules/@babel/helper-string-parser`] — 源链接：https://registry.npmjs.org/@babel/helper-string-parser/-/helper-string-parser-7.29.7.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `@babel/helper-validator-identifier` `7.29.7` [`node_modules/@babel/helper-validator-identifier`] — 源链接：https://registry.npmjs.org/@babel/helper-validator-identifier/-/helper-validator-identifier-7.29.7.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `@babel/helper-validator-option` `7.29.7` [`node_modules/@babel/helper-validator-option`] — 源链接：https://registry.npmjs.org/@babel/helper-validator-option/-/helper-validator-option-7.29.7.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `@babel/helper-wrap-function` `7.29.7` [`node_modules/@babel/helper-wrap-function`] — 源链接：https://registry.npmjs.org/@babel/helper-wrap-function/-/helper-wrap-function-7.29.7.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `@babel/helpers` `7.29.7` [`node_modules/@babel/helpers`] — 源链接：https://registry.npmjs.org/@babel/helpers/-/helpers-7.29.7.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `@babel/parser` `7.29.7` [`node_modules/@babel/parser`] — 源链接：https://registry.npmjs.org/@babel/parser/-/parser-7.29.7.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `@babel/plugin-proposal-export-default-from` `7.29.7` [`node_modules/@babel/plugin-proposal-export-default-from`] — 源链接：https://registry.npmjs.org/@babel/plugin-proposal-export-default-from/-/plugin-proposal-export-default-from-7.29.7.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `@babel/plugin-syntax-async-generators` `7.8.4` [`node_modules/@babel/plugin-syntax-async-generators`] — 源链接：https://registry.npmjs.org/@babel/plugin-syntax-async-generators/-/plugin-syntax-async-generators-7.8.4.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `@babel/plugin-syntax-bigint` `7.8.3` [`node_modules/@babel/plugin-syntax-bigint`] — 源链接：https://registry.npmjs.org/@babel/plugin-syntax-bigint/-/plugin-syntax-bigint-7.8.3.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `@babel/plugin-syntax-class-properties` `7.12.13` [`node_modules/@babel/plugin-syntax-class-properties`] — 源链接：https://registry.npmjs.org/@babel/plugin-syntax-class-properties/-/plugin-syntax-class-properties-7.12.13.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `@babel/plugin-syntax-class-static-block` `7.14.5` [`node_modules/@babel/plugin-syntax-class-static-block`] — 源链接：https://registry.npmjs.org/@babel/plugin-syntax-class-static-block/-/plugin-syntax-class-static-block-7.14.5.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `@babel/plugin-syntax-dynamic-import` `7.8.3` [`node_modules/@babel/plugin-syntax-dynamic-import`] — 源链接：https://registry.npmjs.org/@babel/plugin-syntax-dynamic-import/-/plugin-syntax-dynamic-import-7.8.3.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `@babel/plugin-syntax-export-default-from` `7.29.7` [`node_modules/@babel/plugin-syntax-export-default-from`] — 源链接：https://registry.npmjs.org/@babel/plugin-syntax-export-default-from/-/plugin-syntax-export-default-from-7.29.7.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `@babel/plugin-syntax-flow` `7.29.7` [`node_modules/@babel/plugin-syntax-flow`] — 源链接：https://registry.npmjs.org/@babel/plugin-syntax-flow/-/plugin-syntax-flow-7.29.7.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `@babel/plugin-syntax-import-attributes` `7.29.7` [`node_modules/@babel/plugin-syntax-import-attributes`] — 源链接：https://registry.npmjs.org/@babel/plugin-syntax-import-attributes/-/plugin-syntax-import-attributes-7.29.7.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `@babel/plugin-syntax-import-meta` `7.10.4` [`node_modules/@babel/plugin-syntax-import-meta`] — 源链接：https://registry.npmjs.org/@babel/plugin-syntax-import-meta/-/plugin-syntax-import-meta-7.10.4.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `@babel/plugin-syntax-json-strings` `7.8.3` [`node_modules/@babel/plugin-syntax-json-strings`] — 源链接：https://registry.npmjs.org/@babel/plugin-syntax-json-strings/-/plugin-syntax-json-strings-7.8.3.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `@babel/plugin-syntax-jsx` `7.29.7` [`node_modules/@babel/plugin-syntax-jsx`] — 源链接：https://registry.npmjs.org/@babel/plugin-syntax-jsx/-/plugin-syntax-jsx-7.29.7.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `@babel/plugin-syntax-logical-assignment-operators` `7.10.4` [`node_modules/@babel/plugin-syntax-logical-assignment-operators`] — 源链接：https://registry.npmjs.org/@babel/plugin-syntax-logical-assignment-operators/-/plugin-syntax-logical-assignment-operators-7.10.4.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `@babel/plugin-syntax-nullish-coalescing-operator` `7.8.3` [`node_modules/@babel/plugin-syntax-nullish-coalescing-operator`] — 源链接：https://registry.npmjs.org/@babel/plugin-syntax-nullish-coalescing-operator/-/plugin-syntax-nullish-coalescing-operator-7.8.3.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `@babel/plugin-syntax-numeric-separator` `7.10.4` [`node_modules/@babel/plugin-syntax-numeric-separator`] — 源链接：https://registry.npmjs.org/@babel/plugin-syntax-numeric-separator/-/plugin-syntax-numeric-separator-7.10.4.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `@babel/plugin-syntax-object-rest-spread` `7.8.3` [`node_modules/@babel/plugin-syntax-object-rest-spread`] — 源链接：https://registry.npmjs.org/@babel/plugin-syntax-object-rest-spread/-/plugin-syntax-object-rest-spread-7.8.3.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `@babel/plugin-syntax-optional-catch-binding` `7.8.3` [`node_modules/@babel/plugin-syntax-optional-catch-binding`] — 源链接：https://registry.npmjs.org/@babel/plugin-syntax-optional-catch-binding/-/plugin-syntax-optional-catch-binding-7.8.3.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `@babel/plugin-syntax-optional-chaining` `7.8.3` [`node_modules/@babel/plugin-syntax-optional-chaining`] — 源链接：https://registry.npmjs.org/@babel/plugin-syntax-optional-chaining/-/plugin-syntax-optional-chaining-7.8.3.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `@babel/plugin-syntax-private-property-in-object` `7.14.5` [`node_modules/@babel/plugin-syntax-private-property-in-object`] — 源链接：https://registry.npmjs.org/@babel/plugin-syntax-private-property-in-object/-/plugin-syntax-private-property-in-object-7.14.5.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `@babel/plugin-syntax-top-level-await` `7.14.5` [`node_modules/@babel/plugin-syntax-top-level-await`] — 源链接：https://registry.npmjs.org/@babel/plugin-syntax-top-level-await/-/plugin-syntax-top-level-await-7.14.5.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `@babel/plugin-syntax-typescript` `7.29.7` [`node_modules/@babel/plugin-syntax-typescript`] — 源链接：https://registry.npmjs.org/@babel/plugin-syntax-typescript/-/plugin-syntax-typescript-7.29.7.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `@babel/plugin-transform-async-generator-functions` `7.29.7` [`node_modules/@babel/plugin-transform-async-generator-functions`] — 源链接：https://registry.npmjs.org/@babel/plugin-transform-async-generator-functions/-/plugin-transform-async-generator-functions-7.29.7.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `@babel/plugin-transform-async-to-generator` `7.29.7` [`node_modules/@babel/plugin-transform-async-to-generator`] — 源链接：https://registry.npmjs.org/@babel/plugin-transform-async-to-generator/-/plugin-transform-async-to-generator-7.29.7.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `@babel/plugin-transform-block-scoping` `7.29.7` [`node_modules/@babel/plugin-transform-block-scoping`] — 源链接：https://registry.npmjs.org/@babel/plugin-transform-block-scoping/-/plugin-transform-block-scoping-7.29.7.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `@babel/plugin-transform-class-properties` `7.29.7` [`node_modules/@babel/plugin-transform-class-properties`] — 源链接：https://registry.npmjs.org/@babel/plugin-transform-class-properties/-/plugin-transform-class-properties-7.29.7.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `@babel/plugin-transform-classes` `7.29.7` [`node_modules/@babel/plugin-transform-classes`] — 源链接：https://registry.npmjs.org/@babel/plugin-transform-classes/-/plugin-transform-classes-7.29.7.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `@babel/plugin-transform-destructuring` `7.29.7` [`node_modules/@babel/plugin-transform-destructuring`] — 源链接：https://registry.npmjs.org/@babel/plugin-transform-destructuring/-/plugin-transform-destructuring-7.29.7.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `@babel/plugin-transform-flow-strip-types` `7.29.7` [`node_modules/@babel/plugin-transform-flow-strip-types`] — 源链接：https://registry.npmjs.org/@babel/plugin-transform-flow-strip-types/-/plugin-transform-flow-strip-types-7.29.7.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `@babel/plugin-transform-for-of` `7.29.7` [`node_modules/@babel/plugin-transform-for-of`] — 源链接：https://registry.npmjs.org/@babel/plugin-transform-for-of/-/plugin-transform-for-of-7.29.7.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `@babel/plugin-transform-modules-commonjs` `7.29.7` [`node_modules/@babel/plugin-transform-modules-commonjs`] — 源链接：https://registry.npmjs.org/@babel/plugin-transform-modules-commonjs/-/plugin-transform-modules-commonjs-7.29.7.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `@babel/plugin-transform-named-capturing-groups-regex` `7.29.7` [`node_modules/@babel/plugin-transform-named-capturing-groups-regex`] — 源链接：https://registry.npmjs.org/@babel/plugin-transform-named-capturing-groups-regex/-/plugin-transform-named-capturing-groups-regex-7.29.7.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `@babel/plugin-transform-nullish-coalescing-operator` `7.29.7` [`node_modules/@babel/plugin-transform-nullish-coalescing-operator`] — 源链接：https://registry.npmjs.org/@babel/plugin-transform-nullish-coalescing-operator/-/plugin-transform-nullish-coalescing-operator-7.29.7.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `@babel/plugin-transform-optional-catch-binding` `7.29.7` [`node_modules/@babel/plugin-transform-optional-catch-binding`] — 源链接：https://registry.npmjs.org/@babel/plugin-transform-optional-catch-binding/-/plugin-transform-optional-catch-binding-7.29.7.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `@babel/plugin-transform-optional-chaining` `7.29.7` [`node_modules/@babel/plugin-transform-optional-chaining`] — 源链接：https://registry.npmjs.org/@babel/plugin-transform-optional-chaining/-/plugin-transform-optional-chaining-7.29.7.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `@babel/plugin-transform-private-methods` `7.29.7` [`node_modules/@babel/plugin-transform-private-methods`] — 源链接：https://registry.npmjs.org/@babel/plugin-transform-private-methods/-/plugin-transform-private-methods-7.29.7.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `@babel/plugin-transform-private-property-in-object` `7.29.7` [`node_modules/@babel/plugin-transform-private-property-in-object`] — 源链接：https://registry.npmjs.org/@babel/plugin-transform-private-property-in-object/-/plugin-transform-private-property-in-object-7.29.7.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `@babel/plugin-transform-react-display-name` `7.29.7` [`node_modules/@babel/plugin-transform-react-display-name`] — 源链接：https://registry.npmjs.org/@babel/plugin-transform-react-display-name/-/plugin-transform-react-display-name-7.29.7.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `@babel/plugin-transform-react-jsx` `7.29.7` [`node_modules/@babel/plugin-transform-react-jsx`] — 源链接：https://registry.npmjs.org/@babel/plugin-transform-react-jsx/-/plugin-transform-react-jsx-7.29.7.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `@babel/plugin-transform-react-jsx-self` `7.29.7` [`node_modules/@babel/plugin-transform-react-jsx-self`] — 源链接：https://registry.npmjs.org/@babel/plugin-transform-react-jsx-self/-/plugin-transform-react-jsx-self-7.29.7.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `@babel/plugin-transform-react-jsx-source` `7.29.7` [`node_modules/@babel/plugin-transform-react-jsx-source`] — 源链接：https://registry.npmjs.org/@babel/plugin-transform-react-jsx-source/-/plugin-transform-react-jsx-source-7.29.7.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `@babel/plugin-transform-regenerator` `7.29.7` [`node_modules/@babel/plugin-transform-regenerator`] — 源链接：https://registry.npmjs.org/@babel/plugin-transform-regenerator/-/plugin-transform-regenerator-7.29.7.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `@babel/plugin-transform-runtime` `7.29.7` [`node_modules/@babel/plugin-transform-runtime`] — 源链接：https://registry.npmjs.org/@babel/plugin-transform-runtime/-/plugin-transform-runtime-7.29.7.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `babel-plugin-polyfill-corejs3` `0.13.0` [`node_modules/@babel/plugin-transform-runtime/node_modules/babel-plugin-polyfill-corejs3`] — 源链接：https://registry.npmjs.org/babel-plugin-polyfill-corejs3/-/babel-plugin-polyfill-corejs3-0.13.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `@babel/plugin-transform-typescript` `7.29.7` [`node_modules/@babel/plugin-transform-typescript`] — 源链接：https://registry.npmjs.org/@babel/plugin-transform-typescript/-/plugin-transform-typescript-7.29.7.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `@babel/plugin-transform-unicode-regex` `7.29.7` [`node_modules/@babel/plugin-transform-unicode-regex`] — 源链接：https://registry.npmjs.org/@babel/plugin-transform-unicode-regex/-/plugin-transform-unicode-regex-7.29.7.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `@babel/runtime` `7.29.7` [`node_modules/@babel/runtime`] — 源链接：https://registry.npmjs.org/@babel/runtime/-/runtime-7.29.7.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `@babel/template` `7.29.7` [`node_modules/@babel/template`] — 源链接：https://registry.npmjs.org/@babel/template/-/template-7.29.7.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `@babel/traverse` `7.29.7` [`node_modules/@babel/traverse`] — 源链接：https://registry.npmjs.org/@babel/traverse/-/traverse-7.29.7.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `@babel/types` `7.29.7` [`node_modules/@babel/types`] — 源链接：https://registry.npmjs.org/@babel/types/-/types-7.29.7.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `@craftzdog/react-native-buffer` `6.1.2` [`node_modules/@craftzdog/react-native-buffer`] — 源链接：https://registry.npmjs.org/@craftzdog/react-native-buffer/-/react-native-buffer-6.1.2.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `@hapi/hoek` `9.3.0` [`node_modules/@hapi/hoek`] — 源链接：https://registry.npmjs.org/@hapi/hoek/-/hoek-9.3.0.tgz；仓库：未记录；版权：未记录；许可：`BSD-3-Clause`。
+- `@hapi/topo` `5.1.0` [`node_modules/@hapi/topo`] — 源链接：https://registry.npmjs.org/@hapi/topo/-/topo-5.1.0.tgz；仓库：未记录；版权：未记录；许可：`BSD-3-Clause`。
+- `@invertase/react-native-apple-authentication` `2.5.1` [`node_modules/@invertase/react-native-apple-authentication`] — 源链接：https://registry.npmjs.org/@invertase/react-native-apple-authentication/-/react-native-apple-authentication-2.5.1.tgz；仓库：未记录；版权：未记录；许可：`Apache-2.0`。
+- `@isaacs/ttlcache` `1.4.1` [`node_modules/@isaacs/ttlcache`] — 源链接：https://registry.npmjs.org/@isaacs/ttlcache/-/ttlcache-1.4.1.tgz；仓库：未记录；版权：未记录；许可：`ISC`。
+- `@istanbuljs/load-nyc-config` `1.1.0` [`node_modules/@istanbuljs/load-nyc-config`] — 源链接：https://registry.npmjs.org/@istanbuljs/load-nyc-config/-/load-nyc-config-1.1.0.tgz；仓库：未记录；版权：未记录；许可：`ISC`。
+- `argparse` `1.0.10` [`node_modules/@istanbuljs/load-nyc-config/node_modules/argparse`] — 源链接：https://registry.npmjs.org/argparse/-/argparse-1.0.10.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `find-up` `4.1.0` [`node_modules/@istanbuljs/load-nyc-config/node_modules/find-up`] — 源链接：https://registry.npmjs.org/find-up/-/find-up-4.1.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `js-yaml` `3.15.0` [`node_modules/@istanbuljs/load-nyc-config/node_modules/js-yaml`] — 源链接：https://registry.npmjs.org/js-yaml/-/js-yaml-3.15.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `locate-path` `5.0.0` [`node_modules/@istanbuljs/load-nyc-config/node_modules/locate-path`] — 源链接：https://registry.npmjs.org/locate-path/-/locate-path-5.0.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `p-limit` `2.3.0` [`node_modules/@istanbuljs/load-nyc-config/node_modules/p-limit`] — 源链接：https://registry.npmjs.org/p-limit/-/p-limit-2.3.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `p-locate` `4.1.0` [`node_modules/@istanbuljs/load-nyc-config/node_modules/p-locate`] — 源链接：https://registry.npmjs.org/p-locate/-/p-locate-4.1.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `resolve-from` `5.0.0` [`node_modules/@istanbuljs/load-nyc-config/node_modules/resolve-from`] — 源链接：https://registry.npmjs.org/resolve-from/-/resolve-from-5.0.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `@istanbuljs/schema` `0.1.6` [`node_modules/@istanbuljs/schema`] — 源链接：https://registry.npmjs.org/@istanbuljs/schema/-/schema-0.1.6.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `@jest/create-cache-key-function` `29.7.0` [`node_modules/@jest/create-cache-key-function`] — 源链接：https://registry.npmjs.org/@jest/create-cache-key-function/-/create-cache-key-function-29.7.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `@jest/environment` `29.7.0` [`node_modules/@jest/environment`] — 源链接：https://registry.npmjs.org/@jest/environment/-/environment-29.7.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `@jest/fake-timers` `29.7.0` [`node_modules/@jest/fake-timers`] — 源链接：https://registry.npmjs.org/@jest/fake-timers/-/fake-timers-29.7.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `@jest/schemas` `29.6.3` [`node_modules/@jest/schemas`] — 源链接：https://registry.npmjs.org/@jest/schemas/-/schemas-29.6.3.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `@jest/transform` `29.7.0` [`node_modules/@jest/transform`] — 源链接：https://registry.npmjs.org/@jest/transform/-/transform-29.7.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `@jest/types` `29.6.3` [`node_modules/@jest/types`] — 源链接：https://registry.npmjs.org/@jest/types/-/types-29.6.3.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `@jridgewell/gen-mapping` `0.3.13` [`node_modules/@jridgewell/gen-mapping`] — 源链接：https://registry.npmjs.org/@jridgewell/gen-mapping/-/gen-mapping-0.3.13.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `@jridgewell/remapping` `2.3.5` [`node_modules/@jridgewell/remapping`] — 源链接：https://registry.npmjs.org/@jridgewell/remapping/-/remapping-2.3.5.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `@jridgewell/resolve-uri` `3.1.2` [`node_modules/@jridgewell/resolve-uri`] — 源链接：https://registry.npmjs.org/@jridgewell/resolve-uri/-/resolve-uri-3.1.2.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `@jridgewell/source-map` `0.3.11` [`node_modules/@jridgewell/source-map`] — 源链接：https://registry.npmjs.org/@jridgewell/source-map/-/source-map-0.3.11.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `@jridgewell/sourcemap-codec` `1.5.5` [`node_modules/@jridgewell/sourcemap-codec`] — 源链接：https://registry.npmjs.org/@jridgewell/sourcemap-codec/-/sourcemap-codec-1.5.5.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `@jridgewell/trace-mapping` `0.3.31` [`node_modules/@jridgewell/trace-mapping`] — 源链接：https://registry.npmjs.org/@jridgewell/trace-mapping/-/trace-mapping-0.3.31.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `@nodelib/fs.scandir` `2.1.5` [`node_modules/@nodelib/fs.scandir`] — 源链接：https://registry.npmjs.org/@nodelib/fs.scandir/-/fs.scandir-2.1.5.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `@nodelib/fs.stat` `2.0.5` [`node_modules/@nodelib/fs.stat`] — 源链接：https://registry.npmjs.org/@nodelib/fs.stat/-/fs.stat-2.0.5.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `@nodelib/fs.walk` `1.2.8` [`node_modules/@nodelib/fs.walk`] — 源链接：https://registry.npmjs.org/@nodelib/fs.walk/-/fs.walk-1.2.8.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `@react-native-camera-roll/camera-roll` `7.10.2` [`node_modules/@react-native-camera-roll/camera-roll`] — 源链接：https://registry.npmjs.org/@react-native-camera-roll/camera-roll/-/camera-roll-7.10.2.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `@react-native-clipboard/clipboard` `1.16.3` [`node_modules/@react-native-clipboard/clipboard`] — 源链接：https://registry.npmjs.org/@react-native-clipboard/clipboard/-/clipboard-1.16.3.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `@react-native-community/cli` `20.1.0` [`node_modules/@react-native-community/cli`] — 源链接：https://registry.npmjs.org/@react-native-community/cli/-/cli-20.1.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `@react-native-community/cli-clean` `20.1.0` [`node_modules/@react-native-community/cli-clean`] — 源链接：https://registry.npmjs.org/@react-native-community/cli-clean/-/cli-clean-20.1.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `@react-native-community/cli-config` `20.1.0` [`node_modules/@react-native-community/cli-config`] — 源链接：https://registry.npmjs.org/@react-native-community/cli-config/-/cli-config-20.1.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `@react-native-community/cli-config-android` `20.1.0` [`node_modules/@react-native-community/cli-config-android`] — 源链接：https://registry.npmjs.org/@react-native-community/cli-config-android/-/cli-config-android-20.1.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `@react-native-community/cli-config-apple` `20.1.0` [`node_modules/@react-native-community/cli-config-apple`] — 源链接：https://registry.npmjs.org/@react-native-community/cli-config-apple/-/cli-config-apple-20.1.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `@react-native-community/cli-doctor` `20.1.0` [`node_modules/@react-native-community/cli-doctor`] — 源链接：https://registry.npmjs.org/@react-native-community/cli-doctor/-/cli-doctor-20.1.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `semver` `7.8.5` [`node_modules/@react-native-community/cli-doctor/node_modules/semver`] — 源链接：https://registry.npmjs.org/semver/-/semver-7.8.5.tgz；仓库：未记录；版权：未记录；许可：`ISC`。
+- `@react-native-community/cli-platform-android` `20.1.0` [`node_modules/@react-native-community/cli-platform-android`] — 源链接：https://registry.npmjs.org/@react-native-community/cli-platform-android/-/cli-platform-android-20.1.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `@react-native-community/cli-platform-apple` `20.1.0` [`node_modules/@react-native-community/cli-platform-apple`] — 源链接：https://registry.npmjs.org/@react-native-community/cli-platform-apple/-/cli-platform-apple-20.1.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `@react-native-community/cli-platform-ios` `20.1.0` [`node_modules/@react-native-community/cli-platform-ios`] — 源链接：https://registry.npmjs.org/@react-native-community/cli-platform-ios/-/cli-platform-ios-20.1.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `@react-native-community/cli-server-api` `20.1.0` [`node_modules/@react-native-community/cli-server-api`] — 源链接：https://registry.npmjs.org/@react-native-community/cli-server-api/-/cli-server-api-20.1.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `@react-native-community/cli-tools` `20.1.0` [`node_modules/@react-native-community/cli-tools`] — 源链接：https://registry.npmjs.org/@react-native-community/cli-tools/-/cli-tools-20.1.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `semver` `7.8.5` [`node_modules/@react-native-community/cli-tools/node_modules/semver`] — 源链接：https://registry.npmjs.org/semver/-/semver-7.8.5.tgz；仓库：未记录；版权：未记录；许可：`ISC`。
+- `@react-native-community/cli-types` `20.1.0` [`node_modules/@react-native-community/cli-types`] — 源链接：https://registry.npmjs.org/@react-native-community/cli-types/-/cli-types-20.1.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `semver` `7.8.5` [`node_modules/@react-native-community/cli/node_modules/semver`] — 源链接：https://registry.npmjs.org/semver/-/semver-7.8.5.tgz；仓库：未记录；版权：未记录；许可：`ISC`。
+- `@react-native-community/push-notification-ios` `1.12.0` [`node_modules/@react-native-community/push-notification-ios`] — 源链接：https://registry.npmjs.org/@react-native-community/push-notification-ios/-/push-notification-ios-1.12.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `@react-native-google-signin/google-signin` `16.1.2` [`node_modules/@react-native-google-signin/google-signin`] — 源链接：https://registry.npmjs.org/@react-native-google-signin/google-signin/-/google-signin-16.1.2.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `@react-native/assets-registry` `0.86.0` [`node_modules/@react-native/assets-registry`] — 源链接：https://registry.npmjs.org/@react-native/assets-registry/-/assets-registry-0.86.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `@react-native/babel-plugin-codegen` `0.86.0` [`node_modules/@react-native/babel-plugin-codegen`] — 源链接：https://registry.npmjs.org/@react-native/babel-plugin-codegen/-/babel-plugin-codegen-0.86.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `@react-native/babel-preset` `0.86.0` [`node_modules/@react-native/babel-preset`] — 源链接：https://registry.npmjs.org/@react-native/babel-preset/-/babel-preset-0.86.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `@react-native/codegen` `0.86.0` [`node_modules/@react-native/codegen`] — 源链接：https://registry.npmjs.org/@react-native/codegen/-/codegen-0.86.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `@react-native/community-cli-plugin` `0.86.0` [`node_modules/@react-native/community-cli-plugin`] — 源链接：https://registry.npmjs.org/@react-native/community-cli-plugin/-/community-cli-plugin-0.86.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `semver` `7.8.5` [`node_modules/@react-native/community-cli-plugin/node_modules/semver`] — 源链接：https://registry.npmjs.org/semver/-/semver-7.8.5.tgz；仓库：未记录；版权：未记录；许可：`ISC`。
+- `@react-native/debugger-frontend` `0.86.0` [`node_modules/@react-native/debugger-frontend`] — 源链接：https://registry.npmjs.org/@react-native/debugger-frontend/-/debugger-frontend-0.86.0.tgz；仓库：未记录；版权：未记录；许可：`BSD-3-Clause`。
+- `@react-native/debugger-shell` `0.86.0` [`node_modules/@react-native/debugger-shell`] — 源链接：https://registry.npmjs.org/@react-native/debugger-shell/-/debugger-shell-0.86.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `@react-native/dev-middleware` `0.86.0` [`node_modules/@react-native/dev-middleware`] — 源链接：https://registry.npmjs.org/@react-native/dev-middleware/-/dev-middleware-0.86.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `is-wsl` `2.2.0` [`node_modules/@react-native/dev-middleware/node_modules/is-wsl`] — 源链接：https://registry.npmjs.org/is-wsl/-/is-wsl-2.2.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `open` `7.4.2` [`node_modules/@react-native/dev-middleware/node_modules/open`] — 源链接：https://registry.npmjs.org/open/-/open-7.4.2.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `ws` `7.5.11` [`node_modules/@react-native/dev-middleware/node_modules/ws`] — 源链接：https://registry.npmjs.org/ws/-/ws-7.5.11.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `@react-native/gradle-plugin` `0.86.0` [`node_modules/@react-native/gradle-plugin`] — 源链接：https://registry.npmjs.org/@react-native/gradle-plugin/-/gradle-plugin-0.86.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `@react-native/jest-preset` `0.86.0` [`node_modules/@react-native/jest-preset`] — 源链接：https://registry.npmjs.org/@react-native/jest-preset/-/jest-preset-0.86.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `@react-native/js-polyfills` `0.86.0` [`node_modules/@react-native/js-polyfills`] — 源链接：https://registry.npmjs.org/@react-native/js-polyfills/-/js-polyfills-0.86.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `@react-native/metro-babel-transformer` `0.86.0` [`node_modules/@react-native/metro-babel-transformer`] — 源链接：https://registry.npmjs.org/@react-native/metro-babel-transformer/-/metro-babel-transformer-0.86.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `@react-native/metro-config` `0.86.0` [`node_modules/@react-native/metro-config`] — 源链接：https://registry.npmjs.org/@react-native/metro-config/-/metro-config-0.86.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `@react-native/new-app-screen` `0.86.0` [`node_modules/@react-native/new-app-screen`] — 源链接：https://registry.npmjs.org/@react-native/new-app-screen/-/new-app-screen-0.86.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `@react-native/normalize-colors` `0.86.0` [`node_modules/@react-native/normalize-colors`] — 源链接：https://registry.npmjs.org/@react-native/normalize-colors/-/normalize-colors-0.86.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `@react-native/virtualized-lists` `0.86.0` [`node_modules/@react-native/virtualized-lists`] — 源链接：https://registry.npmjs.org/@react-native/virtualized-lists/-/virtualized-lists-0.86.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `@react-navigation/bottom-tabs` `7.18.8` [`node_modules/@react-navigation/bottom-tabs`] — 源链接：https://registry.npmjs.org/@react-navigation/bottom-tabs/-/bottom-tabs-7.18.8.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `@react-navigation/core` `7.21.5` [`node_modules/@react-navigation/core`] — 源链接：https://registry.npmjs.org/@react-navigation/core/-/core-7.21.5.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `react-is` `19.2.7` [`node_modules/@react-navigation/core/node_modules/react-is`] — 源链接：https://registry.npmjs.org/react-is/-/react-is-19.2.7.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `@react-navigation/elements` `2.9.30` [`node_modules/@react-navigation/elements`] — 源链接：https://registry.npmjs.org/@react-navigation/elements/-/elements-2.9.30.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `@react-navigation/native` `7.3.8` [`node_modules/@react-navigation/native`] — 源链接：https://registry.npmjs.org/@react-navigation/native/-/native-7.3.8.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `@react-navigation/native-stack` `7.17.10` [`node_modules/@react-navigation/native-stack`] — 源链接：https://registry.npmjs.org/@react-navigation/native-stack/-/native-stack-7.17.10.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `@react-navigation/routers` `7.6.0` [`node_modules/@react-navigation/routers`] — 源链接：https://registry.npmjs.org/@react-navigation/routers/-/routers-7.6.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `@sideway/address` `4.1.5` [`node_modules/@sideway/address`] — 源链接：https://registry.npmjs.org/@sideway/address/-/address-4.1.5.tgz；仓库：未记录；版权：未记录；许可：`BSD-3-Clause`。
+- `@sideway/formula` `3.0.1` [`node_modules/@sideway/formula`] — 源链接：https://registry.npmjs.org/@sideway/formula/-/formula-3.0.1.tgz；仓库：未记录；版权：未记录；许可：`BSD-3-Clause`。
+- `@sideway/pinpoint` `2.0.0` [`node_modules/@sideway/pinpoint`] — 源链接：https://registry.npmjs.org/@sideway/pinpoint/-/pinpoint-2.0.0.tgz；仓库：未记录；版权：未记录；许可：`BSD-3-Clause`。
+- `@sinclair/typebox` `0.27.10` [`node_modules/@sinclair/typebox`] — 源链接：https://registry.npmjs.org/@sinclair/typebox/-/typebox-0.27.10.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `@sinonjs/commons` `3.0.1` [`node_modules/@sinonjs/commons`] — 源链接：https://registry.npmjs.org/@sinonjs/commons/-/commons-3.0.1.tgz；仓库：未记录；版权：未记录；许可：`BSD-3-Clause`。
+- `@sinonjs/fake-timers` `10.3.0` [`node_modules/@sinonjs/fake-timers`] — 源链接：https://registry.npmjs.org/@sinonjs/fake-timers/-/fake-timers-10.3.0.tgz；仓库：未记录；版权：未记录；许可：`BSD-3-Clause`。
+- `@types/babel__core` `7.20.5` [`node_modules/@types/babel__core`] — 源链接：https://registry.npmjs.org/@types/babel__core/-/babel__core-7.20.5.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `@types/babel__generator` `7.27.0` [`node_modules/@types/babel__generator`] — 源链接：https://registry.npmjs.org/@types/babel__generator/-/babel__generator-7.27.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `@types/babel__template` `7.4.4` [`node_modules/@types/babel__template`] — 源链接：https://registry.npmjs.org/@types/babel__template/-/babel__template-7.4.4.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `@types/babel__traverse` `7.28.0` [`node_modules/@types/babel__traverse`] — 源链接：https://registry.npmjs.org/@types/babel__traverse/-/babel__traverse-7.28.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `@types/graceful-fs` `4.1.9` [`node_modules/@types/graceful-fs`] — 源链接：https://registry.npmjs.org/@types/graceful-fs/-/graceful-fs-4.1.9.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `@types/istanbul-lib-coverage` `2.0.6` [`node_modules/@types/istanbul-lib-coverage`] — 源链接：https://registry.npmjs.org/@types/istanbul-lib-coverage/-/istanbul-lib-coverage-2.0.6.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `@types/istanbul-lib-report` `3.0.3` [`node_modules/@types/istanbul-lib-report`] — 源链接：https://registry.npmjs.org/@types/istanbul-lib-report/-/istanbul-lib-report-3.0.3.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `@types/istanbul-reports` `3.0.4` [`node_modules/@types/istanbul-reports`] — 源链接：https://registry.npmjs.org/@types/istanbul-reports/-/istanbul-reports-3.0.4.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `@types/node` `26.1.1` [`node_modules/@types/node`] — 源链接：https://registry.npmjs.org/@types/node/-/node-26.1.1.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `@types/react` `19.2.17` [`node_modules/@types/react`] — 源链接：https://registry.npmjs.org/@types/react/-/react-19.2.17.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `@types/stack-utils` `2.0.3` [`node_modules/@types/stack-utils`] — 源链接：https://registry.npmjs.org/@types/stack-utils/-/stack-utils-2.0.3.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `@types/yargs` `17.0.35` [`node_modules/@types/yargs`] — 源链接：https://registry.npmjs.org/@types/yargs/-/yargs-17.0.35.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `@types/yargs-parser` `21.0.3` [`node_modules/@types/yargs-parser`] — 源链接：https://registry.npmjs.org/@types/yargs-parser/-/yargs-parser-21.0.3.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `@vscode/sudo-prompt` `9.3.2` [`node_modules/@vscode/sudo-prompt`] — 源链接：https://registry.npmjs.org/@vscode/sudo-prompt/-/sudo-prompt-9.3.2.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `abort-controller` `3.0.0` [`node_modules/abort-controller`] — 源链接：https://registry.npmjs.org/abort-controller/-/abort-controller-3.0.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `accepts` `1.3.8` [`node_modules/accepts`] — 源链接：https://registry.npmjs.org/accepts/-/accepts-1.3.8.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `negotiator` `0.6.3` [`node_modules/accepts/node_modules/negotiator`] — 源链接：https://registry.npmjs.org/negotiator/-/negotiator-0.6.3.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `acorn` `8.17.0` [`node_modules/acorn`] — 源链接：https://registry.npmjs.org/acorn/-/acorn-8.17.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `agent-base` `7.1.4` [`node_modules/agent-base`] — 源链接：https://registry.npmjs.org/agent-base/-/agent-base-7.1.4.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `anser` `1.4.10` [`node_modules/anser`] — 源链接：https://registry.npmjs.org/anser/-/anser-1.4.10.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `ansi-fragments` `0.2.1` [`node_modules/ansi-fragments`] — 源链接：https://registry.npmjs.org/ansi-fragments/-/ansi-fragments-0.2.1.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `ansi-regex` `4.1.1` [`node_modules/ansi-fragments/node_modules/ansi-regex`] — 源链接：https://registry.npmjs.org/ansi-regex/-/ansi-regex-4.1.1.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `strip-ansi` `5.2.0` [`node_modules/ansi-fragments/node_modules/strip-ansi`] — 源链接：https://registry.npmjs.org/strip-ansi/-/strip-ansi-5.2.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `ansi-regex` `5.0.1` [`node_modules/ansi-regex`] — 源链接：https://registry.npmjs.org/ansi-regex/-/ansi-regex-5.0.1.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `ansi-styles` `4.3.0` [`node_modules/ansi-styles`] — 源链接：https://registry.npmjs.org/ansi-styles/-/ansi-styles-4.3.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `anymatch` `3.1.3` [`node_modules/anymatch`] — 源链接：https://registry.npmjs.org/anymatch/-/anymatch-3.1.3.tgz；仓库：未记录；版权：未记录；许可：`ISC`。
+- `appdirsjs` `1.2.7` [`node_modules/appdirsjs`] — 源链接：https://registry.npmjs.org/appdirsjs/-/appdirsjs-1.2.7.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `argparse` `2.0.1` [`node_modules/argparse`] — 源链接：https://registry.npmjs.org/argparse/-/argparse-2.0.1.tgz；仓库：未记录；版权：未记录；许可：`Python-2.0`。
+- `asap` `2.0.6` [`node_modules/asap`] — 源链接：https://registry.npmjs.org/asap/-/asap-2.0.6.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `astral-regex` `1.0.0` [`node_modules/astral-regex`] — 源链接：https://registry.npmjs.org/astral-regex/-/astral-regex-1.0.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `async-limiter` `1.0.1` [`node_modules/async-limiter`] — 源链接：https://registry.npmjs.org/async-limiter/-/async-limiter-1.0.1.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `available-typed-arrays` `1.0.7` [`node_modules/available-typed-arrays`] — 源链接：https://registry.npmjs.org/available-typed-arrays/-/available-typed-arrays-1.0.7.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `babel-jest` `29.7.0` [`node_modules/babel-jest`] — 源链接：https://registry.npmjs.org/babel-jest/-/babel-jest-29.7.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `babel-plugin-istanbul` `6.1.1` [`node_modules/babel-plugin-istanbul`] — 源链接：https://registry.npmjs.org/babel-plugin-istanbul/-/babel-plugin-istanbul-6.1.1.tgz；仓库：未记录；版权：未记录；许可：`BSD-3-Clause`。
+- `istanbul-lib-instrument` `5.2.1` [`node_modules/babel-plugin-istanbul/node_modules/istanbul-lib-instrument`] — 源链接：https://registry.npmjs.org/istanbul-lib-instrument/-/istanbul-lib-instrument-5.2.1.tgz；仓库：未记录；版权：未记录；许可：`BSD-3-Clause`。
+- `babel-plugin-jest-hoist` `29.6.3` [`node_modules/babel-plugin-jest-hoist`] — 源链接：https://registry.npmjs.org/babel-plugin-jest-hoist/-/babel-plugin-jest-hoist-29.6.3.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `babel-plugin-polyfill-corejs2` `0.4.17` [`node_modules/babel-plugin-polyfill-corejs2`] — 源链接：https://registry.npmjs.org/babel-plugin-polyfill-corejs2/-/babel-plugin-polyfill-corejs2-0.4.17.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `babel-plugin-polyfill-regenerator` `0.6.8` [`node_modules/babel-plugin-polyfill-regenerator`] — 源链接：https://registry.npmjs.org/babel-plugin-polyfill-regenerator/-/babel-plugin-polyfill-regenerator-0.6.8.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `babel-plugin-syntax-hermes-parser` `0.36.0` [`node_modules/babel-plugin-syntax-hermes-parser`] — 源链接：https://registry.npmjs.org/babel-plugin-syntax-hermes-parser/-/babel-plugin-syntax-hermes-parser-0.36.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `babel-plugin-transform-flow-enums` `0.0.2` [`node_modules/babel-plugin-transform-flow-enums`] — 源链接：https://registry.npmjs.org/babel-plugin-transform-flow-enums/-/babel-plugin-transform-flow-enums-0.0.2.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `babel-preset-current-node-syntax` `1.2.0` [`node_modules/babel-preset-current-node-syntax`] — 源链接：https://registry.npmjs.org/babel-preset-current-node-syntax/-/babel-preset-current-node-syntax-1.2.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `babel-preset-jest` `29.6.3` [`node_modules/babel-preset-jest`] — 源链接：https://registry.npmjs.org/babel-preset-jest/-/babel-preset-jest-29.6.3.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `balanced-match` `4.0.4` [`node_modules/balanced-match`] — 源链接：https://registry.npmjs.org/balanced-match/-/balanced-match-4.0.4.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `base-64` `1.0.0` [`node_modules/base-64`] — 源链接：https://registry.npmjs.org/base-64/-/base-64-1.0.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `base64-arraybuffer` `1.0.2` [`node_modules/base64-arraybuffer`] — 源链接：https://registry.npmjs.org/base64-arraybuffer/-/base64-arraybuffer-1.0.2.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `base64-js` `1.5.1` [`node_modules/base64-js`] — 源链接：https://registry.npmjs.org/base64-js/-/base64-js-1.5.1.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `baseline-browser-mapping` `2.10.43` [`node_modules/baseline-browser-mapping`] — 源链接：https://registry.npmjs.org/baseline-browser-mapping/-/baseline-browser-mapping-2.10.43.tgz；仓库：未记录；版权：未记录；许可：`Apache-2.0`。
+- `bl` `4.1.0` [`node_modules/bl`] — 源链接：https://registry.npmjs.org/bl/-/bl-4.1.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `buffer` `5.7.1` [`node_modules/bl/node_modules/buffer`] — 源链接：https://registry.npmjs.org/buffer/-/buffer-5.7.1.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `body-parser` `1.20.6` [`node_modules/body-parser`] — 源链接：https://registry.npmjs.org/body-parser/-/body-parser-1.20.6.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `debug` `2.6.9` [`node_modules/body-parser/node_modules/debug`] — 源链接：https://registry.npmjs.org/debug/-/debug-2.6.9.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `ms` `2.0.0` [`node_modules/body-parser/node_modules/ms`] — 源链接：https://registry.npmjs.org/ms/-/ms-2.0.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `boolbase` `1.0.0` [`node_modules/boolbase`] — 源链接：https://registry.npmjs.org/boolbase/-/boolbase-1.0.0.tgz；仓库：未记录；版权：未记录；许可：`ISC`。
+- `brace-expansion` `5.0.7` [`node_modules/brace-expansion`] — 源链接：https://registry.npmjs.org/brace-expansion/-/brace-expansion-5.0.7.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `braces` `3.0.3` [`node_modules/braces`] — 源链接：https://registry.npmjs.org/braces/-/braces-3.0.3.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `browserslist` `4.28.6` [`node_modules/browserslist`] — 源链接：https://registry.npmjs.org/browserslist/-/browserslist-4.28.6.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `bser` `2.1.1` [`node_modules/bser`] — 源链接：https://registry.npmjs.org/bser/-/bser-2.1.1.tgz；仓库：未记录；版权：未记录；许可：`Apache-2.0`。
+- `buffer` `6.0.3` [`node_modules/buffer`] — 源链接：https://registry.npmjs.org/buffer/-/buffer-6.0.3.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `buffer-from` `1.1.2` [`node_modules/buffer-from`] — 源链接：https://registry.npmjs.org/buffer-from/-/buffer-from-1.1.2.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `bytes` `3.1.2` [`node_modules/bytes`] — 源链接：https://registry.npmjs.org/bytes/-/bytes-3.1.2.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `call-bind` `1.0.9` [`node_modules/call-bind`] — 源链接：https://registry.npmjs.org/call-bind/-/call-bind-1.0.9.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `call-bind-apply-helpers` `1.0.2` [`node_modules/call-bind-apply-helpers`] — 源链接：https://registry.npmjs.org/call-bind-apply-helpers/-/call-bind-apply-helpers-1.0.2.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `call-bound` `1.0.4` [`node_modules/call-bound`] — 源链接：https://registry.npmjs.org/call-bound/-/call-bound-1.0.4.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `callsites` `3.1.0` [`node_modules/callsites`] — 源链接：https://registry.npmjs.org/callsites/-/callsites-3.1.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `camelcase` `5.3.1` [`node_modules/camelcase`] — 源链接：https://registry.npmjs.org/camelcase/-/camelcase-5.3.1.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `caniuse-lite` `1.0.30001805` [`node_modules/caniuse-lite`] — 源链接：https://registry.npmjs.org/caniuse-lite/-/caniuse-lite-1.0.30001805.tgz；仓库：未记录；版权：未记录；许可：`CC-BY-4.0`。
+- `chalk` `4.1.2` [`node_modules/chalk`] — 源链接：https://registry.npmjs.org/chalk/-/chalk-4.1.2.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `chrome-launcher` `0.15.2` [`node_modules/chrome-launcher`] — 源链接：https://registry.npmjs.org/chrome-launcher/-/chrome-launcher-0.15.2.tgz；仓库：未记录；版权：未记录；许可：`Apache-2.0`。
+- `is-wsl` `2.2.0` [`node_modules/chrome-launcher/node_modules/is-wsl`] — 源链接：https://registry.npmjs.org/is-wsl/-/is-wsl-2.2.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `chromium-edge-launcher` `0.3.0` [`node_modules/chromium-edge-launcher`] — 源链接：https://registry.npmjs.org/chromium-edge-launcher/-/chromium-edge-launcher-0.3.0.tgz；仓库：未记录；版权：未记录；许可：`Apache-2.0`。
+- `is-wsl` `2.2.0` [`node_modules/chromium-edge-launcher/node_modules/is-wsl`] — 源链接：https://registry.npmjs.org/is-wsl/-/is-wsl-2.2.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `ci-info` `3.9.0` [`node_modules/ci-info`] — 源链接：https://registry.npmjs.org/ci-info/-/ci-info-3.9.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `cli-cursor` `3.1.0` [`node_modules/cli-cursor`] — 源链接：https://registry.npmjs.org/cli-cursor/-/cli-cursor-3.1.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `cli-spinners` `2.9.2` [`node_modules/cli-spinners`] — 源链接：https://registry.npmjs.org/cli-spinners/-/cli-spinners-2.9.2.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `cliui` `8.0.1` [`node_modules/cliui`] — 源链接：https://registry.npmjs.org/cliui/-/cliui-8.0.1.tgz；仓库：未记录；版权：未记录；许可：`ISC`。
+- `clone` `1.0.4` [`node_modules/clone`] — 源链接：https://registry.npmjs.org/clone/-/clone-1.0.4.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `color` `4.2.3` [`node_modules/color`] — 源链接：https://registry.npmjs.org/color/-/color-4.2.3.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `color-convert` `2.0.1` [`node_modules/color-convert`] — 源链接：https://registry.npmjs.org/color-convert/-/color-convert-2.0.1.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `color-name` `1.1.4` [`node_modules/color-name`] — 源链接：https://registry.npmjs.org/color-name/-/color-name-1.1.4.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `color-string` `1.9.1` [`node_modules/color-string`] — 源链接：https://registry.npmjs.org/color-string/-/color-string-1.9.1.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `colorette` `1.4.0` [`node_modules/colorette`] — 源链接：https://registry.npmjs.org/colorette/-/colorette-1.4.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `command-exists` `1.2.9` [`node_modules/command-exists`] — 源链接：https://registry.npmjs.org/command-exists/-/command-exists-1.2.9.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `commander` `9.5.0` [`node_modules/commander`] — 源链接：https://registry.npmjs.org/commander/-/commander-9.5.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `compressible` `2.0.18` [`node_modules/compressible`] — 源链接：https://registry.npmjs.org/compressible/-/compressible-2.0.18.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `compression` `1.8.1` [`node_modules/compression`] — 源链接：https://registry.npmjs.org/compression/-/compression-1.8.1.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `debug` `2.6.9` [`node_modules/compression/node_modules/debug`] — 源链接：https://registry.npmjs.org/debug/-/debug-2.6.9.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `ms` `2.0.0` [`node_modules/compression/node_modules/ms`] — 源链接：https://registry.npmjs.org/ms/-/ms-2.0.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `concat-map` `0.0.1` [`node_modules/concat-map`] — 源链接：https://registry.npmjs.org/concat-map/-/concat-map-0.0.1.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `connect` `3.7.0` [`node_modules/connect`] — 源链接：https://registry.npmjs.org/connect/-/connect-3.7.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `debug` `2.6.9` [`node_modules/connect/node_modules/debug`] — 源链接：https://registry.npmjs.org/debug/-/debug-2.6.9.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `ms` `2.0.0` [`node_modules/connect/node_modules/ms`] — 源链接：https://registry.npmjs.org/ms/-/ms-2.0.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `content-type` `1.0.5` [`node_modules/content-type`] — 源链接：https://registry.npmjs.org/content-type/-/content-type-1.0.5.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `convert-source-map` `2.0.0` [`node_modules/convert-source-map`] — 源链接：https://registry.npmjs.org/convert-source-map/-/convert-source-map-2.0.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `core-js-compat` `3.49.0` [`node_modules/core-js-compat`] — 源链接：https://registry.npmjs.org/core-js-compat/-/core-js-compat-3.49.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `cosmiconfig` `9.0.2` [`node_modules/cosmiconfig`] — 源链接：https://registry.npmjs.org/cosmiconfig/-/cosmiconfig-9.0.2.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `cross-spawn` `7.0.6` [`node_modules/cross-spawn`] — 源链接：https://registry.npmjs.org/cross-spawn/-/cross-spawn-7.0.6.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `css-line-break` `2.1.0` [`node_modules/css-line-break`] — 源链接：https://registry.npmjs.org/css-line-break/-/css-line-break-2.1.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `css-select` `5.2.2` [`node_modules/css-select`] — 源链接：https://registry.npmjs.org/css-select/-/css-select-5.2.2.tgz；仓库：未记录；版权：未记录；许可：`BSD-2-Clause`。
+- `css-tree` `1.1.3` [`node_modules/css-tree`] — 源链接：https://registry.npmjs.org/css-tree/-/css-tree-1.1.3.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `css-what` `6.2.2` [`node_modules/css-what`] — 源链接：https://registry.npmjs.org/css-what/-/css-what-6.2.2.tgz；仓库：未记录；版权：未记录；许可：`BSD-2-Clause`。
+- `csstype` `3.2.3` [`node_modules/csstype`] — 源链接：https://registry.npmjs.org/csstype/-/csstype-3.2.3.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `dayjs` `1.11.21` [`node_modules/dayjs`] — 源链接：https://registry.npmjs.org/dayjs/-/dayjs-1.11.21.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `debug` `4.4.3` [`node_modules/debug`] — 源链接：https://registry.npmjs.org/debug/-/debug-4.4.3.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `decamelize` `1.2.0` [`node_modules/decamelize`] — 源链接：https://registry.npmjs.org/decamelize/-/decamelize-1.2.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `decode-uri-component` `0.2.2` [`node_modules/decode-uri-component`] — 源链接：https://registry.npmjs.org/decode-uri-component/-/decode-uri-component-0.2.2.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `deepmerge` `4.3.1` [`node_modules/deepmerge`] — 源链接：https://registry.npmjs.org/deepmerge/-/deepmerge-4.3.1.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `defaults` `1.0.4` [`node_modules/defaults`] — 源链接：https://registry.npmjs.org/defaults/-/defaults-1.0.4.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `define-data-property` `1.1.4` [`node_modules/define-data-property`] — 源链接：https://registry.npmjs.org/define-data-property/-/define-data-property-1.1.4.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `depd` `2.0.0` [`node_modules/depd`] — 源链接：https://registry.npmjs.org/depd/-/depd-2.0.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `destroy` `1.2.0` [`node_modules/destroy`] — 源链接：https://registry.npmjs.org/destroy/-/destroy-1.2.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `dijkstrajs` `1.0.3` [`node_modules/dijkstrajs`] — 源链接：https://registry.npmjs.org/dijkstrajs/-/dijkstrajs-1.0.3.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `dom-serializer` `2.0.0` [`node_modules/dom-serializer`] — 源链接：https://registry.npmjs.org/dom-serializer/-/dom-serializer-2.0.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `domelementtype` `2.3.0` [`node_modules/domelementtype`] — 源链接：https://registry.npmjs.org/domelementtype/-/domelementtype-2.3.0.tgz；仓库：未记录；版权：未记录；许可：`BSD-2-Clause`。
+- `domhandler` `5.0.3` [`node_modules/domhandler`] — 源链接：https://registry.npmjs.org/domhandler/-/domhandler-5.0.3.tgz；仓库：未记录；版权：未记录；许可：`BSD-2-Clause`。
+- `domutils` `3.2.2` [`node_modules/domutils`] — 源链接：https://registry.npmjs.org/domutils/-/domutils-3.2.2.tgz；仓库：未记录；版权：未记录；许可：`BSD-2-Clause`。
+- `dunder-proto` `1.0.1` [`node_modules/dunder-proto`] — 源链接：https://registry.npmjs.org/dunder-proto/-/dunder-proto-1.0.1.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `ee-first` `1.1.1` [`node_modules/ee-first`] — 源链接：https://registry.npmjs.org/ee-first/-/ee-first-1.1.1.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `electron-to-chromium` `1.5.389` [`node_modules/electron-to-chromium`] — 源链接：https://registry.npmjs.org/electron-to-chromium/-/electron-to-chromium-1.5.389.tgz；仓库：未记录；版权：未记录；许可：`ISC`。
+- `emoji-regex` `8.0.0` [`node_modules/emoji-regex`] — 源链接：https://registry.npmjs.org/emoji-regex/-/emoji-regex-8.0.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `encodeurl` `1.0.2` [`node_modules/encodeurl`] — 源链接：https://registry.npmjs.org/encodeurl/-/encodeurl-1.0.2.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `entities` `4.5.0` [`node_modules/entities`] — 源链接：https://registry.npmjs.org/entities/-/entities-4.5.0.tgz；仓库：未记录；版权：未记录；许可：`BSD-2-Clause`。
+- `env-paths` `2.2.1` [`node_modules/env-paths`] — 源链接：https://registry.npmjs.org/env-paths/-/env-paths-2.2.1.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `envinfo` `7.21.0` [`node_modules/envinfo`] — 源链接：https://registry.npmjs.org/envinfo/-/envinfo-7.21.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `error-ex` `1.3.4` [`node_modules/error-ex`] — 源链接：https://registry.npmjs.org/error-ex/-/error-ex-1.3.4.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `error-stack-parser` `2.1.4` [`node_modules/error-stack-parser`] — 源链接：https://registry.npmjs.org/error-stack-parser/-/error-stack-parser-2.1.4.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `errorhandler` `1.5.2` [`node_modules/errorhandler`] — 源链接：https://registry.npmjs.org/errorhandler/-/errorhandler-1.5.2.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `es-define-property` `1.0.1` [`node_modules/es-define-property`] — 源链接：https://registry.npmjs.org/es-define-property/-/es-define-property-1.0.1.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `es-errors` `1.3.0` [`node_modules/es-errors`] — 源链接：https://registry.npmjs.org/es-errors/-/es-errors-1.3.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `es-object-atoms` `1.1.2` [`node_modules/es-object-atoms`] — 源链接：https://registry.npmjs.org/es-object-atoms/-/es-object-atoms-1.1.2.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `escalade` `3.2.0` [`node_modules/escalade`] — 源链接：https://registry.npmjs.org/escalade/-/escalade-3.2.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `escape-html` `1.0.3` [`node_modules/escape-html`] — 源链接：https://registry.npmjs.org/escape-html/-/escape-html-1.0.3.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `escape-string-regexp` `4.0.0` [`node_modules/escape-string-regexp`] — 源链接：https://registry.npmjs.org/escape-string-regexp/-/escape-string-regexp-4.0.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `esprima` `4.0.1` [`node_modules/esprima`] — 源链接：https://registry.npmjs.org/esprima/-/esprima-4.0.1.tgz；仓库：未记录；版权：未记录；许可：`BSD-2-Clause`。
+- `etag` `1.8.1` [`node_modules/etag`] — 源链接：https://registry.npmjs.org/etag/-/etag-1.8.1.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `event-target-shim` `5.0.1` [`node_modules/event-target-shim`] — 源链接：https://registry.npmjs.org/event-target-shim/-/event-target-shim-5.0.1.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `events` `3.3.0` [`node_modules/events`] — 源链接：https://registry.npmjs.org/events/-/events-3.3.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `execa` `5.1.1` [`node_modules/execa`] — 源链接：https://registry.npmjs.org/execa/-/execa-5.1.1.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `exponential-backoff` `3.1.3` [`node_modules/exponential-backoff`] — 源链接：https://registry.npmjs.org/exponential-backoff/-/exponential-backoff-3.1.3.tgz；仓库：未记录；版权：未记录；许可：`Apache-2.0`。
+- `fast-base64-decode` `1.0.0` [`node_modules/fast-base64-decode`] — 源链接：https://registry.npmjs.org/fast-base64-decode/-/fast-base64-decode-1.0.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `fast-deep-equal` `3.1.3` [`node_modules/fast-deep-equal`] — 源链接：https://registry.npmjs.org/fast-deep-equal/-/fast-deep-equal-3.1.3.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `fast-glob` `3.3.3` [`node_modules/fast-glob`] — 源链接：https://registry.npmjs.org/fast-glob/-/fast-glob-3.3.3.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `glob-parent` `5.1.2` [`node_modules/fast-glob/node_modules/glob-parent`] — 源链接：https://registry.npmjs.org/glob-parent/-/glob-parent-5.1.2.tgz；仓库：未记录；版权：未记录；许可：`ISC`。
+- `fast-json-stable-stringify` `2.1.0` [`node_modules/fast-json-stable-stringify`] — 源链接：https://registry.npmjs.org/fast-json-stable-stringify/-/fast-json-stable-stringify-2.1.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `fast-xml-parser` `4.5.7` [`node_modules/fast-xml-parser`] — 源链接：https://registry.npmjs.org/fast-xml-parser/-/fast-xml-parser-4.5.7.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `fastq` `1.20.1` [`node_modules/fastq`] — 源链接：https://registry.npmjs.org/fastq/-/fastq-1.20.1.tgz；仓库：未记录；版权：未记录；许可：`ISC`。
+- `fb-dotslash` `0.5.8` [`node_modules/fb-dotslash`] — 源链接：https://registry.npmjs.org/fb-dotslash/-/fb-dotslash-0.5.8.tgz；仓库：未记录；版权：未记录；许可：`(MIT OR Apache-2.0)`。
+- `fb-watchman` `2.0.2` [`node_modules/fb-watchman`] — 源链接：https://registry.npmjs.org/fb-watchman/-/fb-watchman-2.0.2.tgz；仓库：未记录；版权：未记录；许可：`Apache-2.0`。
+- `fill-range` `7.1.1` [`node_modules/fill-range`] — 源链接：https://registry.npmjs.org/fill-range/-/fill-range-7.1.1.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `filter-obj` `1.1.0` [`node_modules/filter-obj`] — 源链接：https://registry.npmjs.org/filter-obj/-/filter-obj-1.1.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `finalhandler` `1.1.2` [`node_modules/finalhandler`] — 源链接：https://registry.npmjs.org/finalhandler/-/finalhandler-1.1.2.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `debug` `2.6.9` [`node_modules/finalhandler/node_modules/debug`] — 源链接：https://registry.npmjs.org/debug/-/debug-2.6.9.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `ms` `2.0.0` [`node_modules/finalhandler/node_modules/ms`] — 源链接：https://registry.npmjs.org/ms/-/ms-2.0.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `on-finished` `2.3.0` [`node_modules/finalhandler/node_modules/on-finished`] — 源链接：https://registry.npmjs.org/on-finished/-/on-finished-2.3.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `find-up` `5.0.0` [`node_modules/find-up`] — 源链接：https://registry.npmjs.org/find-up/-/find-up-5.0.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `flow-enums-runtime` `0.0.6` [`node_modules/flow-enums-runtime`] — 源链接：https://registry.npmjs.org/flow-enums-runtime/-/flow-enums-runtime-0.0.6.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `for-each` `0.3.5` [`node_modules/for-each`] — 源链接：https://registry.npmjs.org/for-each/-/for-each-0.3.5.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `fresh` `0.5.2` [`node_modules/fresh`] — 源链接：https://registry.npmjs.org/fresh/-/fresh-0.5.2.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `fs-extra` `8.1.0` [`node_modules/fs-extra`] — 源链接：https://registry.npmjs.org/fs-extra/-/fs-extra-8.1.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `fs.realpath` `1.0.0` [`node_modules/fs.realpath`] — 源链接：https://registry.npmjs.org/fs.realpath/-/fs.realpath-1.0.0.tgz；仓库：未记录；版权：未记录；许可：`ISC`。
+- `fsevents` `2.3.3` [`node_modules/fsevents`] — 源链接：https://registry.npmjs.org/fsevents/-/fsevents-2.3.3.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `function-bind` `1.1.2` [`node_modules/function-bind`] — 源链接：https://registry.npmjs.org/function-bind/-/function-bind-1.1.2.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `generator-function` `2.0.1` [`node_modules/generator-function`] — 源链接：https://registry.npmjs.org/generator-function/-/generator-function-2.0.1.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `gensync` `1.0.0-beta.2` [`node_modules/gensync`] — 源链接：https://registry.npmjs.org/gensync/-/gensync-1.0.0-beta.2.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `get-caller-file` `2.0.5` [`node_modules/get-caller-file`] — 源链接：https://registry.npmjs.org/get-caller-file/-/get-caller-file-2.0.5.tgz；仓库：未记录；版权：未记录；许可：`ISC`。
+- `get-intrinsic` `1.3.0` [`node_modules/get-intrinsic`] — 源链接：https://registry.npmjs.org/get-intrinsic/-/get-intrinsic-1.3.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `get-package-type` `0.1.0` [`node_modules/get-package-type`] — 源链接：https://registry.npmjs.org/get-package-type/-/get-package-type-0.1.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `get-proto` `1.0.1` [`node_modules/get-proto`] — 源链接：https://registry.npmjs.org/get-proto/-/get-proto-1.0.1.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `get-stream` `6.0.1` [`node_modules/get-stream`] — 源链接：https://registry.npmjs.org/get-stream/-/get-stream-6.0.1.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `glob` `7.2.3` [`node_modules/glob`] — 源链接：https://registry.npmjs.org/glob/-/glob-7.2.3.tgz；仓库：未记录；版权：未记录；许可：`ISC`。
+- `balanced-match` `1.0.2` [`node_modules/glob/node_modules/balanced-match`] — 源链接：https://registry.npmjs.org/balanced-match/-/balanced-match-1.0.2.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `brace-expansion` `1.1.16` [`node_modules/glob/node_modules/brace-expansion`] — 源链接：https://registry.npmjs.org/brace-expansion/-/brace-expansion-1.1.16.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `minimatch` `3.1.5` [`node_modules/glob/node_modules/minimatch`] — 源链接：https://registry.npmjs.org/minimatch/-/minimatch-3.1.5.tgz；仓库：未记录；版权：未记录；许可：`ISC`。
+- `gopd` `1.2.0` [`node_modules/gopd`] — 源链接：https://registry.npmjs.org/gopd/-/gopd-1.2.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `graceful-fs` `4.2.11` [`node_modules/graceful-fs`] — 源链接：https://registry.npmjs.org/graceful-fs/-/graceful-fs-4.2.11.tgz；仓库：未记录；版权：未记录；许可：`ISC`。
+- `has-flag` `4.0.0` [`node_modules/has-flag`] — 源链接：https://registry.npmjs.org/has-flag/-/has-flag-4.0.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `has-property-descriptors` `1.0.2` [`node_modules/has-property-descriptors`] — 源链接：https://registry.npmjs.org/has-property-descriptors/-/has-property-descriptors-1.0.2.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `has-symbols` `1.1.0` [`node_modules/has-symbols`] — 源链接：https://registry.npmjs.org/has-symbols/-/has-symbols-1.1.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `has-tostringtag` `1.0.2` [`node_modules/has-tostringtag`] — 源链接：https://registry.npmjs.org/has-tostringtag/-/has-tostringtag-1.0.2.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `hasown` `2.0.4` [`node_modules/hasown`] — 源链接：https://registry.npmjs.org/hasown/-/hasown-2.0.4.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `hermes-compiler` `250829098.0.14` [`node_modules/hermes-compiler`] — 源链接：https://registry.npmjs.org/hermes-compiler/-/hermes-compiler-250829098.0.14.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `hermes-estree` `0.36.0` [`node_modules/hermes-estree`] — 源链接：https://registry.npmjs.org/hermes-estree/-/hermes-estree-0.36.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `hermes-parser` `0.36.0` [`node_modules/hermes-parser`] — 源链接：https://registry.npmjs.org/hermes-parser/-/hermes-parser-0.36.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `html2canvas` `1.4.1` [`node_modules/html2canvas`] — 源链接：https://registry.npmjs.org/html2canvas/-/html2canvas-1.4.1.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `http-errors` `2.0.1` [`node_modules/http-errors`] — 源链接：https://registry.npmjs.org/http-errors/-/http-errors-2.0.1.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `statuses` `2.0.2` [`node_modules/http-errors/node_modules/statuses`] — 源链接：https://registry.npmjs.org/statuses/-/statuses-2.0.2.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `https-proxy-agent` `7.0.6` [`node_modules/https-proxy-agent`] — 源链接：https://registry.npmjs.org/https-proxy-agent/-/https-proxy-agent-7.0.6.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `human-signals` `2.1.0` [`node_modules/human-signals`] — 源链接：https://registry.npmjs.org/human-signals/-/human-signals-2.1.0.tgz；仓库：未记录；版权：未记录；许可：`Apache-2.0`。
+- `iconv-lite` `0.4.24` [`node_modules/iconv-lite`] — 源链接：https://registry.npmjs.org/iconv-lite/-/iconv-lite-0.4.24.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `ieee754` `1.2.1` [`node_modules/ieee754`] — 源链接：https://registry.npmjs.org/ieee754/-/ieee754-1.2.1.tgz；仓库：未记录；版权：未记录；许可：`BSD-3-Clause`。
+- `image-size` `1.2.1` [`node_modules/image-size`] — 源链接：https://registry.npmjs.org/image-size/-/image-size-1.2.1.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `import-fresh` `3.3.1` [`node_modules/import-fresh`] — 源链接：https://registry.npmjs.org/import-fresh/-/import-fresh-3.3.1.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `imurmurhash` `0.1.4` [`node_modules/imurmurhash`] — 源链接：https://registry.npmjs.org/imurmurhash/-/imurmurhash-0.1.4.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `inflight` `1.0.6` [`node_modules/inflight`] — 源链接：https://registry.npmjs.org/inflight/-/inflight-1.0.6.tgz；仓库：未记录；版权：未记录；许可：`ISC`。
+- `inherits` `2.0.4` [`node_modules/inherits`] — 源链接：https://registry.npmjs.org/inherits/-/inherits-2.0.4.tgz；仓库：未记录；版权：未记录；许可：`ISC`。
+- `invariant` `2.2.4` [`node_modules/invariant`] — 源链接：https://registry.npmjs.org/invariant/-/invariant-2.2.4.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `is-arguments` `1.2.0` [`node_modules/is-arguments`] — 源链接：https://registry.npmjs.org/is-arguments/-/is-arguments-1.2.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `is-arrayish` `0.2.1` [`node_modules/is-arrayish`] — 源链接：https://registry.npmjs.org/is-arrayish/-/is-arrayish-0.2.1.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `is-callable` `1.2.7` [`node_modules/is-callable`] — 源链接：https://registry.npmjs.org/is-callable/-/is-callable-1.2.7.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `is-core-module` `2.16.2` [`node_modules/is-core-module`] — 源链接：https://registry.npmjs.org/is-core-module/-/is-core-module-2.16.2.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `is-docker` `2.2.1` [`node_modules/is-docker`] — 源链接：https://registry.npmjs.org/is-docker/-/is-docker-2.2.1.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `is-extglob` `2.1.1` [`node_modules/is-extglob`] — 源链接：https://registry.npmjs.org/is-extglob/-/is-extglob-2.1.1.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `is-fullwidth-code-point` `2.0.0` [`node_modules/is-fullwidth-code-point`] — 源链接：https://registry.npmjs.org/is-fullwidth-code-point/-/is-fullwidth-code-point-2.0.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `is-generator-function` `1.1.2` [`node_modules/is-generator-function`] — 源链接：https://registry.npmjs.org/is-generator-function/-/is-generator-function-1.1.2.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `is-glob` `4.0.3` [`node_modules/is-glob`] — 源链接：https://registry.npmjs.org/is-glob/-/is-glob-4.0.3.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `is-interactive` `1.0.0` [`node_modules/is-interactive`] — 源链接：https://registry.npmjs.org/is-interactive/-/is-interactive-1.0.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `is-number` `7.0.0` [`node_modules/is-number`] — 源链接：https://registry.npmjs.org/is-number/-/is-number-7.0.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `is-regex` `1.2.1` [`node_modules/is-regex`] — 源链接：https://registry.npmjs.org/is-regex/-/is-regex-1.2.1.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `is-stream` `2.0.1` [`node_modules/is-stream`] — 源链接：https://registry.npmjs.org/is-stream/-/is-stream-2.0.1.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `is-typed-array` `1.1.15` [`node_modules/is-typed-array`] — 源链接：https://registry.npmjs.org/is-typed-array/-/is-typed-array-1.1.15.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `is-unicode-supported` `0.1.0` [`node_modules/is-unicode-supported`] — 源链接：https://registry.npmjs.org/is-unicode-supported/-/is-unicode-supported-0.1.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `is-wsl` `1.1.0` [`node_modules/is-wsl`] — 源链接：https://registry.npmjs.org/is-wsl/-/is-wsl-1.1.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `isexe` `2.0.0` [`node_modules/isexe`] — 源链接：https://registry.npmjs.org/isexe/-/isexe-2.0.0.tgz；仓库：未记录；版权：未记录；许可：`ISC`。
+- `istanbul-lib-coverage` `3.2.2` [`node_modules/istanbul-lib-coverage`] — 源链接：https://registry.npmjs.org/istanbul-lib-coverage/-/istanbul-lib-coverage-3.2.2.tgz；仓库：未记录；版权：未记录；许可：`BSD-3-Clause`。
+- `jest-environment-node` `29.7.0` [`node_modules/jest-environment-node`] — 源链接：https://registry.npmjs.org/jest-environment-node/-/jest-environment-node-29.7.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `jest-get-type` `29.6.3` [`node_modules/jest-get-type`] — 源链接：https://registry.npmjs.org/jest-get-type/-/jest-get-type-29.6.3.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `jest-haste-map` `29.7.0` [`node_modules/jest-haste-map`] — 源链接：https://registry.npmjs.org/jest-haste-map/-/jest-haste-map-29.7.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `jest-message-util` `29.7.0` [`node_modules/jest-message-util`] — 源链接：https://registry.npmjs.org/jest-message-util/-/jest-message-util-29.7.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `jest-mock` `29.7.0` [`node_modules/jest-mock`] — 源链接：https://registry.npmjs.org/jest-mock/-/jest-mock-29.7.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `jest-regex-util` `29.6.3` [`node_modules/jest-regex-util`] — 源链接：https://registry.npmjs.org/jest-regex-util/-/jest-regex-util-29.6.3.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `jest-util` `29.7.0` [`node_modules/jest-util`] — 源链接：https://registry.npmjs.org/jest-util/-/jest-util-29.7.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `jest-validate` `29.7.0` [`node_modules/jest-validate`] — 源链接：https://registry.npmjs.org/jest-validate/-/jest-validate-29.7.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `camelcase` `6.3.0` [`node_modules/jest-validate/node_modules/camelcase`] — 源链接：https://registry.npmjs.org/camelcase/-/camelcase-6.3.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `jest-worker` `29.7.0` [`node_modules/jest-worker`] — 源链接：https://registry.npmjs.org/jest-worker/-/jest-worker-29.7.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `supports-color` `8.1.1` [`node_modules/jest-worker/node_modules/supports-color`] — 源链接：https://registry.npmjs.org/supports-color/-/supports-color-8.1.1.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `joi` `17.13.4` [`node_modules/joi`] — 源链接：https://registry.npmjs.org/joi/-/joi-17.13.4.tgz；仓库：未记录；版权：未记录；许可：`BSD-3-Clause`。
+- `js-tokens` `4.0.0` [`node_modules/js-tokens`] — 源链接：https://registry.npmjs.org/js-tokens/-/js-tokens-4.0.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `js-yaml` `4.3.0` [`node_modules/js-yaml`] — 源链接：https://registry.npmjs.org/js-yaml/-/js-yaml-4.3.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `jsc-safe-url` `0.2.4` [`node_modules/jsc-safe-url`] — 源链接：https://registry.npmjs.org/jsc-safe-url/-/jsc-safe-url-0.2.4.tgz；仓库：未记录；版权：未记录；许可：`0BSD`。
+- `jsesc` `3.1.0` [`node_modules/jsesc`] — 源链接：https://registry.npmjs.org/jsesc/-/jsesc-3.1.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `json-parse-even-better-errors` `2.3.1` [`node_modules/json-parse-even-better-errors`] — 源链接：https://registry.npmjs.org/json-parse-even-better-errors/-/json-parse-even-better-errors-2.3.1.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `json5` `2.2.3` [`node_modules/json5`] — 源链接：https://registry.npmjs.org/json5/-/json5-2.2.3.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `jsonfile` `4.0.0` [`node_modules/jsonfile`] — 源链接：https://registry.npmjs.org/jsonfile/-/jsonfile-4.0.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `kleur` `3.0.3` [`node_modules/kleur`] — 源链接：https://registry.npmjs.org/kleur/-/kleur-3.0.3.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `launch-editor` `2.14.1` [`node_modules/launch-editor`] — 源链接：https://registry.npmjs.org/launch-editor/-/launch-editor-2.14.1.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `leven` `3.1.0` [`node_modules/leven`] — 源链接：https://registry.npmjs.org/leven/-/leven-3.1.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `lighthouse-logger` `1.4.2` [`node_modules/lighthouse-logger`] — 源链接：https://registry.npmjs.org/lighthouse-logger/-/lighthouse-logger-1.4.2.tgz；仓库：未记录；版权：未记录；许可：`Apache-2.0`。
+- `debug` `2.6.9` [`node_modules/lighthouse-logger/node_modules/debug`] — 源链接：https://registry.npmjs.org/debug/-/debug-2.6.9.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `ms` `2.0.0` [`node_modules/lighthouse-logger/node_modules/ms`] — 源链接：https://registry.npmjs.org/ms/-/ms-2.0.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `lines-and-columns` `1.2.4` [`node_modules/lines-and-columns`] — 源链接：https://registry.npmjs.org/lines-and-columns/-/lines-and-columns-1.2.4.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `locate-path` `6.0.0` [`node_modules/locate-path`] — 源链接：https://registry.npmjs.org/locate-path/-/locate-path-6.0.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `lodash.debounce` `4.0.8` [`node_modules/lodash.debounce`] — 源链接：https://registry.npmjs.org/lodash.debounce/-/lodash.debounce-4.0.8.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `lodash.throttle` `4.1.1` [`node_modules/lodash.throttle`] — 源链接：https://registry.npmjs.org/lodash.throttle/-/lodash.throttle-4.1.1.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `log-symbols` `4.1.0` [`node_modules/log-symbols`] — 源链接：https://registry.npmjs.org/log-symbols/-/log-symbols-4.1.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `logkitty` `0.7.1` [`node_modules/logkitty`] — 源链接：https://registry.npmjs.org/logkitty/-/logkitty-0.7.1.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `cliui` `6.0.0` [`node_modules/logkitty/node_modules/cliui`] — 源链接：https://registry.npmjs.org/cliui/-/cliui-6.0.0.tgz；仓库：未记录；版权：未记录；许可：`ISC`。
+- `find-up` `4.1.0` [`node_modules/logkitty/node_modules/find-up`] — 源链接：https://registry.npmjs.org/find-up/-/find-up-4.1.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `locate-path` `5.0.0` [`node_modules/logkitty/node_modules/locate-path`] — 源链接：https://registry.npmjs.org/locate-path/-/locate-path-5.0.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `p-limit` `2.3.0` [`node_modules/logkitty/node_modules/p-limit`] — 源链接：https://registry.npmjs.org/p-limit/-/p-limit-2.3.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `p-locate` `4.1.0` [`node_modules/logkitty/node_modules/p-locate`] — 源链接：https://registry.npmjs.org/p-locate/-/p-locate-4.1.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `wrap-ansi` `6.2.0` [`node_modules/logkitty/node_modules/wrap-ansi`] — 源链接：https://registry.npmjs.org/wrap-ansi/-/wrap-ansi-6.2.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `y18n` `4.0.3` [`node_modules/logkitty/node_modules/y18n`] — 源链接：https://registry.npmjs.org/y18n/-/y18n-4.0.3.tgz；仓库：未记录；版权：未记录；许可：`ISC`。
+- `yargs` `15.4.1` [`node_modules/logkitty/node_modules/yargs`] — 源链接：https://registry.npmjs.org/yargs/-/yargs-15.4.1.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `yargs-parser` `18.1.3` [`node_modules/logkitty/node_modules/yargs-parser`] — 源链接：https://registry.npmjs.org/yargs-parser/-/yargs-parser-18.1.3.tgz；仓库：未记录；版权：未记录；许可：`ISC`。
+- `loose-envify` `1.4.0` [`node_modules/loose-envify`] — 源链接：https://registry.npmjs.org/loose-envify/-/loose-envify-1.4.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `lru-cache` `5.1.1` [`node_modules/lru-cache`] — 源链接：https://registry.npmjs.org/lru-cache/-/lru-cache-5.1.1.tgz；仓库：未记录；版权：未记录；许可：`ISC`。
+- `makeerror` `1.0.12` [`node_modules/makeerror`] — 源链接：https://registry.npmjs.org/makeerror/-/makeerror-1.0.12.tgz；仓库：未记录；版权：未记录；许可：`BSD-3-Clause`。
+- `marky` `1.3.0` [`node_modules/marky`] — 源链接：https://registry.npmjs.org/marky/-/marky-1.3.0.tgz；仓库：未记录；版权：未记录；许可：`Apache-2.0`。
+- `math-intrinsics` `1.1.0` [`node_modules/math-intrinsics`] — 源链接：https://registry.npmjs.org/math-intrinsics/-/math-intrinsics-1.1.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `mdn-data` `2.0.14` [`node_modules/mdn-data`] — 源链接：https://registry.npmjs.org/mdn-data/-/mdn-data-2.0.14.tgz；仓库：未记录；版权：未记录；许可：`CC0-1.0`。
+- `media-typer` `0.3.0` [`node_modules/media-typer`] — 源链接：https://registry.npmjs.org/media-typer/-/media-typer-0.3.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `memoize-one` `5.2.1` [`node_modules/memoize-one`] — 源链接：https://registry.npmjs.org/memoize-one/-/memoize-one-5.2.1.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `merge-stream` `2.0.0` [`node_modules/merge-stream`] — 源链接：https://registry.npmjs.org/merge-stream/-/merge-stream-2.0.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `merge2` `1.4.1` [`node_modules/merge2`] — 源链接：https://registry.npmjs.org/merge2/-/merge2-1.4.1.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `metro` `0.84.4` [`node_modules/metro`] — 源链接：https://registry.npmjs.org/metro/-/metro-0.84.4.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `metro-babel-transformer` `0.84.4` [`node_modules/metro-babel-transformer`] — 源链接：https://registry.npmjs.org/metro-babel-transformer/-/metro-babel-transformer-0.84.4.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `hermes-estree` `0.35.0` [`node_modules/metro-babel-transformer/node_modules/hermes-estree`] — 源链接：https://registry.npmjs.org/hermes-estree/-/hermes-estree-0.35.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `hermes-parser` `0.35.0` [`node_modules/metro-babel-transformer/node_modules/hermes-parser`] — 源链接：https://registry.npmjs.org/hermes-parser/-/hermes-parser-0.35.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `metro-cache` `0.84.4` [`node_modules/metro-cache`] — 源链接：https://registry.npmjs.org/metro-cache/-/metro-cache-0.84.4.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `metro-cache-key` `0.84.4` [`node_modules/metro-cache-key`] — 源链接：https://registry.npmjs.org/metro-cache-key/-/metro-cache-key-0.84.4.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `metro-config` `0.84.4` [`node_modules/metro-config`] — 源链接：https://registry.npmjs.org/metro-config/-/metro-config-0.84.4.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `metro-core` `0.84.4` [`node_modules/metro-core`] — 源链接：https://registry.npmjs.org/metro-core/-/metro-core-0.84.4.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `metro-file-map` `0.84.4` [`node_modules/metro-file-map`] — 源链接：https://registry.npmjs.org/metro-file-map/-/metro-file-map-0.84.4.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `metro-minify-terser` `0.84.4` [`node_modules/metro-minify-terser`] — 源链接：https://registry.npmjs.org/metro-minify-terser/-/metro-minify-terser-0.84.4.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `metro-resolver` `0.84.4` [`node_modules/metro-resolver`] — 源链接：https://registry.npmjs.org/metro-resolver/-/metro-resolver-0.84.4.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `metro-runtime` `0.84.4` [`node_modules/metro-runtime`] — 源链接：https://registry.npmjs.org/metro-runtime/-/metro-runtime-0.84.4.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `metro-source-map` `0.84.4` [`node_modules/metro-source-map`] — 源链接：https://registry.npmjs.org/metro-source-map/-/metro-source-map-0.84.4.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `source-map` `0.5.7` [`node_modules/metro-source-map/node_modules/source-map`] — 源链接：https://registry.npmjs.org/source-map/-/source-map-0.5.7.tgz；仓库：未记录；版权：未记录；许可：`BSD-3-Clause`。
+- `metro-symbolicate` `0.84.4` [`node_modules/metro-symbolicate`] — 源链接：https://registry.npmjs.org/metro-symbolicate/-/metro-symbolicate-0.84.4.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `source-map` `0.5.7` [`node_modules/metro-symbolicate/node_modules/source-map`] — 源链接：https://registry.npmjs.org/source-map/-/source-map-0.5.7.tgz；仓库：未记录；版权：未记录；许可：`BSD-3-Clause`。
+- `metro-transform-plugins` `0.84.4` [`node_modules/metro-transform-plugins`] — 源链接：https://registry.npmjs.org/metro-transform-plugins/-/metro-transform-plugins-0.84.4.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `metro-transform-worker` `0.84.4` [`node_modules/metro-transform-worker`] — 源链接：https://registry.npmjs.org/metro-transform-worker/-/metro-transform-worker-0.84.4.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `accepts` `2.0.0` [`node_modules/metro/node_modules/accepts`] — 源链接：https://registry.npmjs.org/accepts/-/accepts-2.0.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `ci-info` `2.0.0` [`node_modules/metro/node_modules/ci-info`] — 源链接：https://registry.npmjs.org/ci-info/-/ci-info-2.0.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `hermes-estree` `0.35.0` [`node_modules/metro/node_modules/hermes-estree`] — 源链接：https://registry.npmjs.org/hermes-estree/-/hermes-estree-0.35.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `hermes-parser` `0.35.0` [`node_modules/metro/node_modules/hermes-parser`] — 源链接：https://registry.npmjs.org/hermes-parser/-/hermes-parser-0.35.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `mime-types` `3.0.2` [`node_modules/metro/node_modules/mime-types`] — 源链接：https://registry.npmjs.org/mime-types/-/mime-types-3.0.2.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `negotiator` `1.0.0` [`node_modules/metro/node_modules/negotiator`] — 源链接：https://registry.npmjs.org/negotiator/-/negotiator-1.0.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `source-map` `0.5.7` [`node_modules/metro/node_modules/source-map`] — 源链接：https://registry.npmjs.org/source-map/-/source-map-0.5.7.tgz；仓库：未记录；版权：未记录；许可：`BSD-3-Clause`。
+- `ws` `7.5.11` [`node_modules/metro/node_modules/ws`] — 源链接：https://registry.npmjs.org/ws/-/ws-7.5.11.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `micromatch` `4.0.8` [`node_modules/micromatch`] — 源链接：https://registry.npmjs.org/micromatch/-/micromatch-4.0.8.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `mime` `2.6.0` [`node_modules/mime`] — 源链接：https://registry.npmjs.org/mime/-/mime-2.6.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `mime-db` `1.54.0` [`node_modules/mime-db`] — 源链接：https://registry.npmjs.org/mime-db/-/mime-db-1.54.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `mime-types` `2.1.35` [`node_modules/mime-types`] — 源链接：https://registry.npmjs.org/mime-types/-/mime-types-2.1.35.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `mime-db` `1.52.0` [`node_modules/mime-types/node_modules/mime-db`] — 源链接：https://registry.npmjs.org/mime-db/-/mime-db-1.52.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `mimic-fn` `2.1.0` [`node_modules/mimic-fn`] — 源链接：https://registry.npmjs.org/mimic-fn/-/mimic-fn-2.1.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `minimatch` `10.2.5` [`node_modules/minimatch`] — 源链接：https://registry.npmjs.org/minimatch/-/minimatch-10.2.5.tgz；仓库：未记录；版权：未记录；许可：`BlueOak-1.0.0`。
+- `minipass` `7.1.3` [`node_modules/minipass`] — 源链接：https://registry.npmjs.org/minipass/-/minipass-7.1.3.tgz；仓库：未记录；版权：未记录；许可：`BlueOak-1.0.0`。
+- `mkdirp` `1.0.4` [`node_modules/mkdirp`] — 源链接：https://registry.npmjs.org/mkdirp/-/mkdirp-1.0.4.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `ms` `2.1.3` [`node_modules/ms`] — 源链接：https://registry.npmjs.org/ms/-/ms-2.1.3.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `nanoid` `3.3.16` [`node_modules/nanoid`] — 源链接：https://registry.npmjs.org/nanoid/-/nanoid-3.3.16.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `negotiator` `0.6.4` [`node_modules/negotiator`] — 源链接：https://registry.npmjs.org/negotiator/-/negotiator-0.6.4.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `nocache` `3.0.4` [`node_modules/nocache`] — 源链接：https://registry.npmjs.org/nocache/-/nocache-3.0.4.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `node-int64` `0.4.0` [`node_modules/node-int64`] — 源链接：https://registry.npmjs.org/node-int64/-/node-int64-0.4.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `node-releases` `2.0.51` [`node_modules/node-releases`] — 源链接：https://registry.npmjs.org/node-releases/-/node-releases-2.0.51.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `node-stream-zip` `1.15.0` [`node_modules/node-stream-zip`] — 源链接：https://registry.npmjs.org/node-stream-zip/-/node-stream-zip-1.15.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `normalize-path` `3.0.0` [`node_modules/normalize-path`] — 源链接：https://registry.npmjs.org/normalize-path/-/normalize-path-3.0.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `npm-run-path` `4.0.1` [`node_modules/npm-run-path`] — 源链接：https://registry.npmjs.org/npm-run-path/-/npm-run-path-4.0.1.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `nth-check` `2.1.1` [`node_modules/nth-check`] — 源链接：https://registry.npmjs.org/nth-check/-/nth-check-2.1.1.tgz；仓库：未记录；版权：未记录；许可：`BSD-2-Clause`。
+- `nullthrows` `1.1.1` [`node_modules/nullthrows`] — 源链接：https://registry.npmjs.org/nullthrows/-/nullthrows-1.1.1.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `ob1` `0.84.4` [`node_modules/ob1`] — 源链接：https://registry.npmjs.org/ob1/-/ob1-0.84.4.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `object-assign` `4.1.1` [`node_modules/object-assign`] — 源链接：https://registry.npmjs.org/object-assign/-/object-assign-4.1.1.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `object-inspect` `1.13.4` [`node_modules/object-inspect`] — 源链接：https://registry.npmjs.org/object-inspect/-/object-inspect-1.13.4.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `on-finished` `2.4.1` [`node_modules/on-finished`] — 源链接：https://registry.npmjs.org/on-finished/-/on-finished-2.4.1.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `on-headers` `1.1.0` [`node_modules/on-headers`] — 源链接：https://registry.npmjs.org/on-headers/-/on-headers-1.1.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `once` `1.4.0` [`node_modules/once`] — 源链接：https://registry.npmjs.org/once/-/once-1.4.0.tgz；仓库：未记录；版权：未记录；许可：`ISC`。
+- `onetime` `5.1.2` [`node_modules/onetime`] — 源链接：https://registry.npmjs.org/onetime/-/onetime-5.1.2.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `open` `6.4.0` [`node_modules/open`] — 源链接：https://registry.npmjs.org/open/-/open-6.4.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `ora` `5.4.1` [`node_modules/ora`] — 源链接：https://registry.npmjs.org/ora/-/ora-5.4.1.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `p-limit` `3.1.0` [`node_modules/p-limit`] — 源链接：https://registry.npmjs.org/p-limit/-/p-limit-3.1.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `p-locate` `5.0.0` [`node_modules/p-locate`] — 源链接：https://registry.npmjs.org/p-locate/-/p-locate-5.0.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `p-try` `2.2.0` [`node_modules/p-try`] — 源链接：https://registry.npmjs.org/p-try/-/p-try-2.2.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `parent-module` `1.0.1` [`node_modules/parent-module`] — 源链接：https://registry.npmjs.org/parent-module/-/parent-module-1.0.1.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `parse-json` `5.2.0` [`node_modules/parse-json`] — 源链接：https://registry.npmjs.org/parse-json/-/parse-json-5.2.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `parseurl` `1.3.3` [`node_modules/parseurl`] — 源链接：https://registry.npmjs.org/parseurl/-/parseurl-1.3.3.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `path-exists` `4.0.0` [`node_modules/path-exists`] — 源链接：https://registry.npmjs.org/path-exists/-/path-exists-4.0.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `path-is-absolute` `1.0.1` [`node_modules/path-is-absolute`] — 源链接：https://registry.npmjs.org/path-is-absolute/-/path-is-absolute-1.0.1.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `path-key` `3.1.1` [`node_modules/path-key`] — 源链接：https://registry.npmjs.org/path-key/-/path-key-3.1.1.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `path-parse` `1.0.7` [`node_modules/path-parse`] — 源链接：https://registry.npmjs.org/path-parse/-/path-parse-1.0.7.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `path-scurry` `2.0.2` [`node_modules/path-scurry`] — 源链接：https://registry.npmjs.org/path-scurry/-/path-scurry-2.0.2.tgz；仓库：未记录；版权：未记录；许可：`BlueOak-1.0.0`。
+- `lru-cache` `11.5.2` [`node_modules/path-scurry/node_modules/lru-cache`] — 源链接：https://registry.npmjs.org/lru-cache/-/lru-cache-11.5.2.tgz；仓库：未记录；版权：未记录；许可：`BlueOak-1.0.0`。
+- `picocolors` `1.1.1` [`node_modules/picocolors`] — 源链接：https://registry.npmjs.org/picocolors/-/picocolors-1.1.1.tgz；仓库：未记录；版权：未记录；许可：`ISC`。
+- `picomatch` `2.3.2` [`node_modules/picomatch`] — 源链接：https://registry.npmjs.org/picomatch/-/picomatch-2.3.2.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `pirates` `4.0.7` [`node_modules/pirates`] — 源链接：https://registry.npmjs.org/pirates/-/pirates-4.0.7.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `pngjs` `5.0.0` [`node_modules/pngjs`] — 源链接：https://registry.npmjs.org/pngjs/-/pngjs-5.0.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `possible-typed-array-names` `1.1.0` [`node_modules/possible-typed-array-names`] — 源链接：https://registry.npmjs.org/possible-typed-array-names/-/possible-typed-array-names-1.1.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `pretty-format` `29.7.0` [`node_modules/pretty-format`] — 源链接：https://registry.npmjs.org/pretty-format/-/pretty-format-29.7.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `ansi-styles` `5.2.0` [`node_modules/pretty-format/node_modules/ansi-styles`] — 源链接：https://registry.npmjs.org/ansi-styles/-/ansi-styles-5.2.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `process` `0.11.10` [`node_modules/process`] — 源链接：https://registry.npmjs.org/process/-/process-0.11.10.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `promise` `8.3.0` [`node_modules/promise`] — 源链接：https://registry.npmjs.org/promise/-/promise-8.3.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `prompts` `2.4.2` [`node_modules/prompts`] — 源链接：https://registry.npmjs.org/prompts/-/prompts-2.4.2.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `prop-types` `15.8.1` [`node_modules/prop-types`] — 源链接：https://registry.npmjs.org/prop-types/-/prop-types-15.8.1.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `react-is` `16.13.1` [`node_modules/prop-types/node_modules/react-is`] — 源链接：https://registry.npmjs.org/react-is/-/react-is-16.13.1.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `qrcode` `1.5.4` [`node_modules/qrcode`] — 源链接：https://registry.npmjs.org/qrcode/-/qrcode-1.5.4.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `cliui` `6.0.0` [`node_modules/qrcode/node_modules/cliui`] — 源链接：https://registry.npmjs.org/cliui/-/cliui-6.0.0.tgz；仓库：未记录；版权：未记录；许可：`ISC`。
+- `find-up` `4.1.0` [`node_modules/qrcode/node_modules/find-up`] — 源链接：https://registry.npmjs.org/find-up/-/find-up-4.1.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `locate-path` `5.0.0` [`node_modules/qrcode/node_modules/locate-path`] — 源链接：https://registry.npmjs.org/locate-path/-/locate-path-5.0.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `p-limit` `2.3.0` [`node_modules/qrcode/node_modules/p-limit`] — 源链接：https://registry.npmjs.org/p-limit/-/p-limit-2.3.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `p-locate` `4.1.0` [`node_modules/qrcode/node_modules/p-locate`] — 源链接：https://registry.npmjs.org/p-locate/-/p-locate-4.1.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `wrap-ansi` `6.2.0` [`node_modules/qrcode/node_modules/wrap-ansi`] — 源链接：https://registry.npmjs.org/wrap-ansi/-/wrap-ansi-6.2.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `y18n` `4.0.3` [`node_modules/qrcode/node_modules/y18n`] — 源链接：https://registry.npmjs.org/y18n/-/y18n-4.0.3.tgz；仓库：未记录；版权：未记录；许可：`ISC`。
+- `yargs` `15.4.1` [`node_modules/qrcode/node_modules/yargs`] — 源链接：https://registry.npmjs.org/yargs/-/yargs-15.4.1.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `yargs-parser` `18.1.3` [`node_modules/qrcode/node_modules/yargs-parser`] — 源链接：https://registry.npmjs.org/yargs-parser/-/yargs-parser-18.1.3.tgz；仓库：未记录；版权：未记录；许可：`ISC`。
+- `qs` `6.15.3` [`node_modules/qs`] — 源链接：https://registry.npmjs.org/qs/-/qs-6.15.3.tgz；仓库：未记录；版权：未记录；许可：`BSD-3-Clause`。
+- `query-string` `7.1.3` [`node_modules/query-string`] — 源链接：https://registry.npmjs.org/query-string/-/query-string-7.1.3.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `queue` `6.0.2` [`node_modules/queue`] — 源链接：https://registry.npmjs.org/queue/-/queue-6.0.2.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `queue-microtask` `1.2.3` [`node_modules/queue-microtask`] — 源链接：https://registry.npmjs.org/queue-microtask/-/queue-microtask-1.2.3.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `range-parser` `1.2.1` [`node_modules/range-parser`] — 源链接：https://registry.npmjs.org/range-parser/-/range-parser-1.2.1.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `raw-body` `2.5.3` [`node_modules/raw-body`] — 源链接：https://registry.npmjs.org/raw-body/-/raw-body-2.5.3.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `react` `19.2.3` [`node_modules/react`] — 源链接：https://registry.npmjs.org/react/-/react-19.2.3.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `react-devtools-core` `6.1.5` [`node_modules/react-devtools-core`] — 源链接：https://registry.npmjs.org/react-devtools-core/-/react-devtools-core-6.1.5.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `ws` `7.5.11` [`node_modules/react-devtools-core/node_modules/ws`] — 源链接：https://registry.npmjs.org/ws/-/ws-7.5.11.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `react-freeze` `1.0.4` [`node_modules/react-freeze`] — 源链接：https://registry.npmjs.org/react-freeze/-/react-freeze-1.0.4.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `react-is` `18.3.1` [`node_modules/react-is`] — 源链接：https://registry.npmjs.org/react-is/-/react-is-18.3.1.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `react-native` `0.86.0` [`node_modules/react-native`] — 源链接：https://registry.npmjs.org/react-native/-/react-native-0.86.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `react-native-app-auth` `8.4.1` [`node_modules/react-native-app-auth`] — 源链接：https://registry.npmjs.org/react-native-app-auth/-/react-native-app-auth-8.4.1.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `react-native-base64` `0.0.2` [`node_modules/react-native-base64`] — 源链接：https://registry.npmjs.org/react-native-base64/-/react-native-base64-0.0.2.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `react-native-blob-util` `0.24.10` [`node_modules/react-native-blob-util`] — 源链接：https://registry.npmjs.org/react-native-blob-util/-/react-native-blob-util-0.24.10.tgz；仓库：未记录；版权：未记录；许可：`MIT`；应用本地补丁并保留上游许可。
+- `glob` `13.0.6` [`node_modules/react-native-blob-util/node_modules/glob`] — 源链接：https://registry.npmjs.org/glob/-/glob-13.0.6.tgz；仓库：未记录；版权：未记录；许可：`BlueOak-1.0.0`。
+- `react-native-get-random-values` `2.0.0` [`node_modules/react-native-get-random-values`] — 源链接：https://registry.npmjs.org/react-native-get-random-values/-/react-native-get-random-values-2.0.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `react-native-iap` `15.4.1` [`node_modules/react-native-iap`] — 源链接：https://registry.npmjs.org/react-native-iap/-/react-native-iap-15.4.1.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `react-native-keychain` `10.0.0` [`node_modules/react-native-keychain`] — 源链接：https://registry.npmjs.org/react-native-keychain/-/react-native-keychain-10.0.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `react-native-nitro-modules` `0.35.10` [`node_modules/react-native-nitro-modules`] — 源链接：https://registry.npmjs.org/react-native-nitro-modules/-/react-native-nitro-modules-0.35.10.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `react-native-qrcode-svg` `6.3.21` [`node_modules/react-native-qrcode-svg`] — 源链接：https://registry.npmjs.org/react-native-qrcode-svg/-/react-native-qrcode-svg-6.3.21.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `react-native-quick-base64` `3.0.1` [`node_modules/react-native-quick-base64`] — 源链接：https://registry.npmjs.org/react-native-quick-base64/-/react-native-quick-base64-3.0.1.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `react-native-quick-crypto` `1.1.6` [`node_modules/react-native-quick-crypto`] — 源链接：https://registry.npmjs.org/react-native-quick-crypto/-/react-native-quick-crypto-1.1.6.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `readable-stream` `4.7.0` [`node_modules/react-native-quick-crypto/node_modules/readable-stream`] — 源链接：https://registry.npmjs.org/readable-stream/-/readable-stream-4.7.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `react-native-safe-area-context` `5.8.0` [`node_modules/react-native-safe-area-context`] — 源链接：https://registry.npmjs.org/react-native-safe-area-context/-/react-native-safe-area-context-5.8.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `react-native-screens` `4.26.0` [`node_modules/react-native-screens`] — 源链接：https://registry.npmjs.org/react-native-screens/-/react-native-screens-4.26.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `react-native-share` `12.2.5` [`node_modules/react-native-share`] — 源链接：https://registry.npmjs.org/react-native-share/-/react-native-share-12.2.5.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `react-native-svg` `15.15.5` [`node_modules/react-native-svg`] — 源链接：https://registry.npmjs.org/react-native-svg/-/react-native-svg-15.15.5.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `react-native-track-player` `4.1.2` [`node_modules/react-native-track-player`] — 源链接：https://registry.npmjs.org/react-native-track-player/-/react-native-track-player-4.1.2.tgz；仓库：未记录；版权：未记录；许可：`Apache-2.0`；应用本地补丁并保留上游许可。
+- `react-native-view-shot` `5.1.1` [`node_modules/react-native-view-shot`] — 源链接：https://registry.npmjs.org/react-native-view-shot/-/react-native-view-shot-5.1.1.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `commander` `12.1.0` [`node_modules/react-native/node_modules/commander`] — 源链接：https://registry.npmjs.org/commander/-/commander-12.1.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `semver` `7.8.5` [`node_modules/react-native/node_modules/semver`] — 源链接：https://registry.npmjs.org/semver/-/semver-7.8.5.tgz；仓库：未记录；版权：未记录；许可：`ISC`。
+- `ws` `7.5.11` [`node_modules/react-native/node_modules/ws`] — 源链接：https://registry.npmjs.org/ws/-/ws-7.5.11.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `react-refresh` `0.14.2` [`node_modules/react-refresh`] — 源链接：https://registry.npmjs.org/react-refresh/-/react-refresh-0.14.2.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `readable-stream` `3.6.2` [`node_modules/readable-stream`] — 源链接：https://registry.npmjs.org/readable-stream/-/readable-stream-3.6.2.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `regenerate` `1.4.2` [`node_modules/regenerate`] — 源链接：https://registry.npmjs.org/regenerate/-/regenerate-1.4.2.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `regenerate-unicode-properties` `10.2.2` [`node_modules/regenerate-unicode-properties`] — 源链接：https://registry.npmjs.org/regenerate-unicode-properties/-/regenerate-unicode-properties-10.2.2.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `regenerator-runtime` `0.13.11` [`node_modules/regenerator-runtime`] — 源链接：https://registry.npmjs.org/regenerator-runtime/-/regenerator-runtime-0.13.11.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `regexpu-core` `6.4.0` [`node_modules/regexpu-core`] — 源链接：https://registry.npmjs.org/regexpu-core/-/regexpu-core-6.4.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `regjsgen` `0.8.0` [`node_modules/regjsgen`] — 源链接：https://registry.npmjs.org/regjsgen/-/regjsgen-0.8.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `regjsparser` `0.13.2` [`node_modules/regjsparser`] — 源链接：https://registry.npmjs.org/regjsparser/-/regjsparser-0.13.2.tgz；仓库：未记录；版权：未记录；许可：`BSD-2-Clause`。
+- `require-directory` `2.1.1` [`node_modules/require-directory`] — 源链接：https://registry.npmjs.org/require-directory/-/require-directory-2.1.1.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `require-main-filename` `2.0.0` [`node_modules/require-main-filename`] — 源链接：https://registry.npmjs.org/require-main-filename/-/require-main-filename-2.0.0.tgz；仓库：未记录；版权：未记录；许可：`ISC`。
+- `resolve` `1.22.12` [`node_modules/resolve`] — 源链接：https://registry.npmjs.org/resolve/-/resolve-1.22.12.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `resolve-from` `4.0.0` [`node_modules/resolve-from`] — 源链接：https://registry.npmjs.org/resolve-from/-/resolve-from-4.0.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `restore-cursor` `3.1.0` [`node_modules/restore-cursor`] — 源链接：https://registry.npmjs.org/restore-cursor/-/restore-cursor-3.1.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `reusify` `1.1.0` [`node_modules/reusify`] — 源链接：https://registry.npmjs.org/reusify/-/reusify-1.1.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `run-parallel` `1.2.0` [`node_modules/run-parallel`] — 源链接：https://registry.npmjs.org/run-parallel/-/run-parallel-1.2.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `safe-buffer` `5.2.1` [`node_modules/safe-buffer`] — 源链接：https://registry.npmjs.org/safe-buffer/-/safe-buffer-5.2.1.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `safe-regex-test` `1.1.0` [`node_modules/safe-regex-test`] — 源链接：https://registry.npmjs.org/safe-regex-test/-/safe-regex-test-1.1.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `safer-buffer` `2.1.2` [`node_modules/safer-buffer`] — 源链接：https://registry.npmjs.org/safer-buffer/-/safer-buffer-2.1.2.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `scheduler` `0.27.0` [`node_modules/scheduler`] — 源链接：https://registry.npmjs.org/scheduler/-/scheduler-0.27.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `semver` `6.3.1` [`node_modules/semver`] — 源链接：https://registry.npmjs.org/semver/-/semver-6.3.1.tgz；仓库：未记录；版权：未记录；许可：`ISC`。
+- `send` `0.19.2` [`node_modules/send`] — 源链接：https://registry.npmjs.org/send/-/send-0.19.2.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `debug` `2.6.9` [`node_modules/send/node_modules/debug`] — 源链接：https://registry.npmjs.org/debug/-/debug-2.6.9.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `ms` `2.0.0` [`node_modules/send/node_modules/debug/node_modules/ms`] — 源链接：https://registry.npmjs.org/ms/-/ms-2.0.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `encodeurl` `2.0.0` [`node_modules/send/node_modules/encodeurl`] — 源链接：https://registry.npmjs.org/encodeurl/-/encodeurl-2.0.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `mime` `1.6.0` [`node_modules/send/node_modules/mime`] — 源链接：https://registry.npmjs.org/mime/-/mime-1.6.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `statuses` `2.0.2` [`node_modules/send/node_modules/statuses`] — 源链接：https://registry.npmjs.org/statuses/-/statuses-2.0.2.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `serialize-error` `2.1.0` [`node_modules/serialize-error`] — 源链接：https://registry.npmjs.org/serialize-error/-/serialize-error-2.1.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `serve-static` `1.16.3` [`node_modules/serve-static`] — 源链接：https://registry.npmjs.org/serve-static/-/serve-static-1.16.3.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `encodeurl` `2.0.0` [`node_modules/serve-static/node_modules/encodeurl`] — 源链接：https://registry.npmjs.org/encodeurl/-/encodeurl-2.0.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `set-blocking` `2.0.0` [`node_modules/set-blocking`] — 源链接：https://registry.npmjs.org/set-blocking/-/set-blocking-2.0.0.tgz；仓库：未记录；版权：未记录；许可：`ISC`。
+- `set-function-length` `1.2.2` [`node_modules/set-function-length`] — 源链接：https://registry.npmjs.org/set-function-length/-/set-function-length-1.2.2.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `setprototypeof` `1.2.0` [`node_modules/setprototypeof`] — 源链接：https://registry.npmjs.org/setprototypeof/-/setprototypeof-1.2.0.tgz；仓库：未记录；版权：未记录；许可：`ISC`。
+- `sf-symbols-typescript` `2.2.0` [`node_modules/sf-symbols-typescript`] — 源链接：https://registry.npmjs.org/sf-symbols-typescript/-/sf-symbols-typescript-2.2.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `shebang-command` `2.0.0` [`node_modules/shebang-command`] — 源链接：https://registry.npmjs.org/shebang-command/-/shebang-command-2.0.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `shebang-regex` `3.0.0` [`node_modules/shebang-regex`] — 源链接：https://registry.npmjs.org/shebang-regex/-/shebang-regex-3.0.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `shell-quote` `1.10.0` [`node_modules/shell-quote`] — 源链接：https://registry.npmjs.org/shell-quote/-/shell-quote-1.10.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `side-channel` `1.1.1` [`node_modules/side-channel`] — 源链接：https://registry.npmjs.org/side-channel/-/side-channel-1.1.1.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `side-channel-list` `1.0.1` [`node_modules/side-channel-list`] — 源链接：https://registry.npmjs.org/side-channel-list/-/side-channel-list-1.0.1.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `side-channel-map` `1.0.1` [`node_modules/side-channel-map`] — 源链接：https://registry.npmjs.org/side-channel-map/-/side-channel-map-1.0.1.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `side-channel-weakmap` `1.0.2` [`node_modules/side-channel-weakmap`] — 源链接：https://registry.npmjs.org/side-channel-weakmap/-/side-channel-weakmap-1.0.2.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `signal-exit` `3.0.7` [`node_modules/signal-exit`] — 源链接：https://registry.npmjs.org/signal-exit/-/signal-exit-3.0.7.tgz；仓库：未记录；版权：未记录；许可：`ISC`。
+- `simple-swizzle` `0.2.4` [`node_modules/simple-swizzle`] — 源链接：https://registry.npmjs.org/simple-swizzle/-/simple-swizzle-0.2.4.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `is-arrayish` `0.3.4` [`node_modules/simple-swizzle/node_modules/is-arrayish`] — 源链接：https://registry.npmjs.org/is-arrayish/-/is-arrayish-0.3.4.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `sisteransi` `1.0.5` [`node_modules/sisteransi`] — 源链接：https://registry.npmjs.org/sisteransi/-/sisteransi-1.0.5.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `slash` `3.0.0` [`node_modules/slash`] — 源链接：https://registry.npmjs.org/slash/-/slash-3.0.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `slice-ansi` `2.1.0` [`node_modules/slice-ansi`] — 源链接：https://registry.npmjs.org/slice-ansi/-/slice-ansi-2.1.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `ansi-styles` `3.2.1` [`node_modules/slice-ansi/node_modules/ansi-styles`] — 源链接：https://registry.npmjs.org/ansi-styles/-/ansi-styles-3.2.1.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `color-convert` `1.9.3` [`node_modules/slice-ansi/node_modules/color-convert`] — 源链接：https://registry.npmjs.org/color-convert/-/color-convert-1.9.3.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `color-name` `1.1.3` [`node_modules/slice-ansi/node_modules/color-name`] — 源链接：https://registry.npmjs.org/color-name/-/color-name-1.1.3.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `source-map` `0.6.1` [`node_modules/source-map`] — 源链接：https://registry.npmjs.org/source-map/-/source-map-0.6.1.tgz；仓库：未记录；版权：未记录；许可：`BSD-3-Clause`。
+- `split-on-first` `1.1.0` [`node_modules/split-on-first`] — 源链接：https://registry.npmjs.org/split-on-first/-/split-on-first-1.1.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `sprintf-js` `1.0.3` [`node_modules/sprintf-js`] — 源链接：https://registry.npmjs.org/sprintf-js/-/sprintf-js-1.0.3.tgz；仓库：未记录；版权：未记录；许可：`BSD-3-Clause`。
+- `stack-utils` `2.0.6` [`node_modules/stack-utils`] — 源链接：https://registry.npmjs.org/stack-utils/-/stack-utils-2.0.6.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `escape-string-regexp` `2.0.0` [`node_modules/stack-utils/node_modules/escape-string-regexp`] — 源链接：https://registry.npmjs.org/escape-string-regexp/-/escape-string-regexp-2.0.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `stackframe` `1.3.4` [`node_modules/stackframe`] — 源链接：https://registry.npmjs.org/stackframe/-/stackframe-1.3.4.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `stacktrace-parser` `0.1.11` [`node_modules/stacktrace-parser`] — 源链接：https://registry.npmjs.org/stacktrace-parser/-/stacktrace-parser-0.1.11.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `type-fest` `0.7.1` [`node_modules/stacktrace-parser/node_modules/type-fest`] — 源链接：https://registry.npmjs.org/type-fest/-/type-fest-0.7.1.tgz；仓库：未记录；版权：未记录；许可：`(MIT OR CC0-1.0)`。
+- `standard-navigation` `0.0.7` [`node_modules/standard-navigation`] — 源链接：https://registry.npmjs.org/standard-navigation/-/standard-navigation-0.0.7.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `statuses` `1.5.0` [`node_modules/statuses`] — 源链接：https://registry.npmjs.org/statuses/-/statuses-1.5.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `strict-uri-encode` `2.0.0` [`node_modules/strict-uri-encode`] — 源链接：https://registry.npmjs.org/strict-uri-encode/-/strict-uri-encode-2.0.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `string-width` `4.2.3` [`node_modules/string-width`] — 源链接：https://registry.npmjs.org/string-width/-/string-width-4.2.3.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `is-fullwidth-code-point` `3.0.0` [`node_modules/string-width/node_modules/is-fullwidth-code-point`] — 源链接：https://registry.npmjs.org/is-fullwidth-code-point/-/is-fullwidth-code-point-3.0.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `string_decoder` `1.3.0` [`node_modules/string_decoder`] — 源链接：https://registry.npmjs.org/string_decoder/-/string_decoder-1.3.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `strip-ansi` `6.0.1` [`node_modules/strip-ansi`] — 源链接：https://registry.npmjs.org/strip-ansi/-/strip-ansi-6.0.1.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `strip-final-newline` `2.0.0` [`node_modules/strip-final-newline`] — 源链接：https://registry.npmjs.org/strip-final-newline/-/strip-final-newline-2.0.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `strnum` `1.1.2` [`node_modules/strnum`] — 源链接：https://registry.npmjs.org/strnum/-/strnum-1.1.2.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `supports-color` `7.2.0` [`node_modules/supports-color`] — 源链接：https://registry.npmjs.org/supports-color/-/supports-color-7.2.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `supports-preserve-symlinks-flag` `1.0.0` [`node_modules/supports-preserve-symlinks-flag`] — 源链接：https://registry.npmjs.org/supports-preserve-symlinks-flag/-/supports-preserve-symlinks-flag-1.0.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `terser` `5.49.0` [`node_modules/terser`] — 源链接：https://registry.npmjs.org/terser/-/terser-5.49.0.tgz；仓库：未记录；版权：未记录；许可：`BSD-2-Clause`。
+- `commander` `2.20.3` [`node_modules/terser/node_modules/commander`] — 源链接：https://registry.npmjs.org/commander/-/commander-2.20.3.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `source-map-support` `0.5.21` [`node_modules/terser/node_modules/source-map-support`] — 源链接：https://registry.npmjs.org/source-map-support/-/source-map-support-0.5.21.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `test-exclude` `6.0.0` [`node_modules/test-exclude`] — 源链接：https://registry.npmjs.org/test-exclude/-/test-exclude-6.0.0.tgz；仓库：未记录；版权：未记录；许可：`ISC`。
+- `balanced-match` `1.0.2` [`node_modules/test-exclude/node_modules/balanced-match`] — 源链接：https://registry.npmjs.org/balanced-match/-/balanced-match-1.0.2.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `brace-expansion` `1.1.16` [`node_modules/test-exclude/node_modules/brace-expansion`] — 源链接：https://registry.npmjs.org/brace-expansion/-/brace-expansion-1.1.16.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `minimatch` `3.1.5` [`node_modules/test-exclude/node_modules/minimatch`] — 源链接：https://registry.npmjs.org/minimatch/-/minimatch-3.1.5.tgz；仓库：未记录；版权：未记录；许可：`ISC`。
+- `text-encoding` `0.7.0` [`node_modules/text-encoding`] — 源链接：https://registry.npmjs.org/text-encoding/-/text-encoding-0.7.0.tgz；仓库：未记录；版权：未记录；许可：`(Unlicense OR Apache-2.0)`。
+- `text-segmentation` `1.0.3` [`node_modules/text-segmentation`] — 源链接：https://registry.npmjs.org/text-segmentation/-/text-segmentation-1.0.3.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `throat` `5.0.0` [`node_modules/throat`] — 源链接：https://registry.npmjs.org/throat/-/throat-5.0.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `tinyglobby` `0.2.17` [`node_modules/tinyglobby`] — 源链接：https://registry.npmjs.org/tinyglobby/-/tinyglobby-0.2.17.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `fdir` `6.5.0` [`node_modules/tinyglobby/node_modules/fdir`] — 源链接：https://registry.npmjs.org/fdir/-/fdir-6.5.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `picomatch` `4.0.5` [`node_modules/tinyglobby/node_modules/picomatch`] — 源链接：https://registry.npmjs.org/picomatch/-/picomatch-4.0.5.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `tmpl` `1.0.5` [`node_modules/tmpl`] — 源链接：https://registry.npmjs.org/tmpl/-/tmpl-1.0.5.tgz；仓库：未记录；版权：未记录；许可：`BSD-3-Clause`。
+- `to-regex-range` `5.0.1` [`node_modules/to-regex-range`] — 源链接：https://registry.npmjs.org/to-regex-range/-/to-regex-range-5.0.1.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `toidentifier` `1.0.1` [`node_modules/toidentifier`] — 源链接：https://registry.npmjs.org/toidentifier/-/toidentifier-1.0.1.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `type-detect` `4.0.8` [`node_modules/type-detect`] — 源链接：https://registry.npmjs.org/type-detect/-/type-detect-4.0.8.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `type-is` `1.6.18` [`node_modules/type-is`] — 源链接：https://registry.npmjs.org/type-is/-/type-is-1.6.18.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `typescript` `5.9.3` [`node_modules/typescript`] — 源链接：https://registry.npmjs.org/typescript/-/typescript-5.9.3.tgz；仓库：未记录；版权：未记录；许可：`Apache-2.0`。
+- `undici-types` `8.3.0` [`node_modules/undici-types`] — 源链接：https://registry.npmjs.org/undici-types/-/undici-types-8.3.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `unicode-canonical-property-names-ecmascript` `2.0.1` [`node_modules/unicode-canonical-property-names-ecmascript`] — 源链接：https://registry.npmjs.org/unicode-canonical-property-names-ecmascript/-/unicode-canonical-property-names-ecmascript-2.0.1.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `unicode-match-property-ecmascript` `2.0.0` [`node_modules/unicode-match-property-ecmascript`] — 源链接：https://registry.npmjs.org/unicode-match-property-ecmascript/-/unicode-match-property-ecmascript-2.0.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `unicode-match-property-value-ecmascript` `2.2.1` [`node_modules/unicode-match-property-value-ecmascript`] — 源链接：https://registry.npmjs.org/unicode-match-property-value-ecmascript/-/unicode-match-property-value-ecmascript-2.2.1.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `unicode-property-aliases-ecmascript` `2.2.0` [`node_modules/unicode-property-aliases-ecmascript`] — 源链接：https://registry.npmjs.org/unicode-property-aliases-ecmascript/-/unicode-property-aliases-ecmascript-2.2.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `universalify` `0.1.2` [`node_modules/universalify`] — 源链接：https://registry.npmjs.org/universalify/-/universalify-0.1.2.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `unpipe` `1.0.0` [`node_modules/unpipe`] — 源链接：https://registry.npmjs.org/unpipe/-/unpipe-1.0.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `update-browserslist-db` `1.2.3` [`node_modules/update-browserslist-db`] — 源链接：https://registry.npmjs.org/update-browserslist-db/-/update-browserslist-db-1.2.3.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `use-latest-callback` `0.2.6` [`node_modules/use-latest-callback`] — 源链接：https://registry.npmjs.org/use-latest-callback/-/use-latest-callback-0.2.6.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `use-sync-external-store` `1.6.0` [`node_modules/use-sync-external-store`] — 源链接：https://registry.npmjs.org/use-sync-external-store/-/use-sync-external-store-1.6.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `util` `0.12.5` [`node_modules/util`] — 源链接：https://registry.npmjs.org/util/-/util-0.12.5.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `util-deprecate` `1.0.2` [`node_modules/util-deprecate`] — 源链接：https://registry.npmjs.org/util-deprecate/-/util-deprecate-1.0.2.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `utils-merge` `1.0.1` [`node_modules/utils-merge`] — 源链接：https://registry.npmjs.org/utils-merge/-/utils-merge-1.0.1.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `utrie` `1.0.2` [`node_modules/utrie`] — 源链接：https://registry.npmjs.org/utrie/-/utrie-1.0.2.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `uuid` `14.0.1` [`node_modules/uuid`] — 源链接：https://registry.npmjs.org/uuid/-/uuid-14.0.1.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `vary` `1.1.2` [`node_modules/vary`] — 源链接：https://registry.npmjs.org/vary/-/vary-1.1.2.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `vlq` `1.0.1` [`node_modules/vlq`] — 源链接：https://registry.npmjs.org/vlq/-/vlq-1.0.1.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `walker` `1.0.8` [`node_modules/walker`] — 源链接：https://registry.npmjs.org/walker/-/walker-1.0.8.tgz；仓库：未记录；版权：未记录；许可：`Apache-2.0`。
+- `warn-once` `0.1.1` [`node_modules/warn-once`] — 源链接：https://registry.npmjs.org/warn-once/-/warn-once-0.1.1.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `wcwidth` `1.0.1` [`node_modules/wcwidth`] — 源链接：https://registry.npmjs.org/wcwidth/-/wcwidth-1.0.1.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `whatwg-fetch` `3.6.20` [`node_modules/whatwg-fetch`] — 源链接：https://registry.npmjs.org/whatwg-fetch/-/whatwg-fetch-3.6.20.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `which` `2.0.2` [`node_modules/which`] — 源链接：https://registry.npmjs.org/which/-/which-2.0.2.tgz；仓库：未记录；版权：未记录；许可：`ISC`。
+- `which-module` `2.0.1` [`node_modules/which-module`] — 源链接：https://registry.npmjs.org/which-module/-/which-module-2.0.1.tgz；仓库：未记录；版权：未记录；许可：`ISC`。
+- `which-typed-array` `1.1.22` [`node_modules/which-typed-array`] — 源链接：https://registry.npmjs.org/which-typed-array/-/which-typed-array-1.1.22.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `wrap-ansi` `7.0.0` [`node_modules/wrap-ansi`] — 源链接：https://registry.npmjs.org/wrap-ansi/-/wrap-ansi-7.0.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `wrappy` `1.0.2` [`node_modules/wrappy`] — 源链接：https://registry.npmjs.org/wrappy/-/wrappy-1.0.2.tgz；仓库：未记录；版权：未记录；许可：`ISC`。
+- `write-file-atomic` `4.0.2` [`node_modules/write-file-atomic`] — 源链接：https://registry.npmjs.org/write-file-atomic/-/write-file-atomic-4.0.2.tgz；仓库：未记录；版权：未记录；许可：`ISC`。
+- `ws` `6.2.4` [`node_modules/ws`] — 源链接：https://registry.npmjs.org/ws/-/ws-6.2.4.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `y18n` `5.0.8` [`node_modules/y18n`] — 源链接：https://registry.npmjs.org/y18n/-/y18n-5.0.8.tgz；仓库：未记录；版权：未记录；许可：`ISC`。
+- `yallist` `3.1.1` [`node_modules/yallist`] — 源链接：https://registry.npmjs.org/yallist/-/yallist-3.1.1.tgz；仓库：未记录；版权：未记录；许可：`ISC`。
+- `yaml` `2.9.0` [`node_modules/yaml`] — 源链接：https://registry.npmjs.org/yaml/-/yaml-2.9.0.tgz；仓库：未记录；版权：未记录；许可：`ISC`。
+- `yargs` `17.7.3` [`node_modules/yargs`] — 源链接：https://registry.npmjs.org/yargs/-/yargs-17.7.3.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+- `yargs-parser` `21.1.1` [`node_modules/yargs-parser`] — 源链接：https://registry.npmjs.org/yargs-parser/-/yargs-parser-21.1.1.tgz；仓库：未记录；版权：未记录；许可：`ISC`。
+- `yocto-queue` `0.1.0` [`node_modules/yocto-queue`] — 源链接：https://registry.npmjs.org/yocto-queue/-/yocto-queue-0.1.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
 
-- `@invertase/react-native-apple-authentication` — 版本 `2.5.1`；源链接：https://registry.npmjs.org/@invertase/react-native-apple-authentication/-/react-native-apple-authentication-2.5.1.tgz；仓库：未记录；版权：未记录；许可：`Apache-2.0`。
-- `@react-native-camera-roll/camera-roll` — 版本 `7.10.2`；源链接：https://registry.npmjs.org/@react-native-camera-roll/camera-roll/-/camera-roll-7.10.2.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
-- `@react-native-clipboard/clipboard` — 版本 `1.16.3`；源链接：https://registry.npmjs.org/@react-native-clipboard/clipboard/-/clipboard-1.16.3.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
-- `@react-native-community/push-notification-ios` — 版本 `1.12.0`；源链接：https://registry.npmjs.org/@react-native-community/push-notification-ios/-/push-notification-ios-1.12.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
-- `@react-native-google-signin/google-signin` — 版本 `16.1.2`；源链接：https://registry.npmjs.org/@react-native-google-signin/google-signin/-/google-signin-16.1.2.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
-- `@react-native/new-app-screen` — 版本 `0.86.0`；源链接：https://registry.npmjs.org/@react-native/new-app-screen/-/new-app-screen-0.86.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
-- `@react-navigation/bottom-tabs` — 版本 `7.18.8`；源链接：https://registry.npmjs.org/@react-navigation/bottom-tabs/-/bottom-tabs-7.18.8.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
-- `@react-navigation/native` — 版本 `7.3.8`；源链接：https://registry.npmjs.org/@react-navigation/native/-/native-7.3.8.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
-- `@react-navigation/native-stack` — 版本 `7.17.10`；源链接：https://registry.npmjs.org/@react-navigation/native-stack/-/native-stack-7.17.10.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
-- `buffer` — 版本 `6.0.3`；源链接：https://registry.npmjs.org/buffer/-/buffer-6.0.3.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
-- `react` — 版本 `19.2.3`；源链接：https://registry.npmjs.org/react/-/react-19.2.3.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
-- `react-native` — 版本 `0.86.0`；源链接：https://registry.npmjs.org/react-native/-/react-native-0.86.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
-- `react-native-app-auth` — 版本 `8.4.1`；源链接：https://registry.npmjs.org/react-native-app-auth/-/react-native-app-auth-8.4.1.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
-- `react-native-blob-util` — 版本 `0.24.10`；源链接：https://registry.npmjs.org/react-native-blob-util/-/react-native-blob-util-0.24.10.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
-- `react-native-get-random-values` — 版本 `2.0.0`；源链接：https://registry.npmjs.org/react-native-get-random-values/-/react-native-get-random-values-2.0.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
-- `react-native-iap` — 版本 `15.4.1`；源链接：https://registry.npmjs.org/react-native-iap/-/react-native-iap-15.4.1.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
-- `react-native-keychain` — 版本 `10.0.0`；源链接：https://registry.npmjs.org/react-native-keychain/-/react-native-keychain-10.0.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
-- `react-native-nitro-modules` — 版本 `0.35.10`；源链接：https://registry.npmjs.org/react-native-nitro-modules/-/react-native-nitro-modules-0.35.10.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
-- `react-native-qrcode-svg` — 版本 `6.3.21`；源链接：https://registry.npmjs.org/react-native-qrcode-svg/-/react-native-qrcode-svg-6.3.21.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
-- `react-native-quick-base64` — 版本 `3.0.1`；源链接：https://registry.npmjs.org/react-native-quick-base64/-/react-native-quick-base64-3.0.1.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
-- `react-native-quick-crypto` — 版本 `1.1.6`；源链接：https://registry.npmjs.org/react-native-quick-crypto/-/react-native-quick-crypto-1.1.6.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
-- `react-native-safe-area-context` — 版本 `5.8.0`；源链接：https://registry.npmjs.org/react-native-safe-area-context/-/react-native-safe-area-context-5.8.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
-- `react-native-screens` — 版本 `4.26.0`；源链接：https://registry.npmjs.org/react-native-screens/-/react-native-screens-4.26.0.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
-- `react-native-share` — 版本 `12.2.5`；源链接：https://registry.npmjs.org/react-native-share/-/react-native-share-12.2.5.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
-- `react-native-svg` — 版本 `15.15.5`；源链接：https://registry.npmjs.org/react-native-svg/-/react-native-svg-15.15.5.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
-- `react-native-track-player` — 版本 `4.1.2`；源链接：https://registry.npmjs.org/react-native-track-player/-/react-native-track-player-4.1.2.tgz；仓库：未记录；版权：未记录；许可：`Apache-2.0`。
-- `react-native-view-shot` — 版本 `5.1.1`；源链接：https://registry.npmjs.org/react-native-view-shot/-/react-native-view-shot-5.1.1.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
-- `uuid` — 版本 `14.0.1`；源链接：https://registry.npmjs.org/uuid/-/uuid-14.0.1.tgz；仓库：未记录；版权：未记录；许可：`MIT`。
+## 许可文本与声明
 
-经补丁修改的软件包继续适用其上游许可；本版本对 `react-native-blob-util` 和 `react-native-track-player` 应用本地补丁。
+每个清单条目中的精确许可表达式具有约束力。多许可表达式的各个可选许可均在下方链接。版权及署名仍归各上游作者和贡献者所有。
 
-## 在发布输入中识别的原生组件
+- `0BSD`：https://spdx.org/licenses/0BSD.html
+- `Apache-2.0`：https://spdx.org/licenses/Apache-2.0.html
+- `BSD-2-Clause`：https://spdx.org/licenses/BSD-2-Clause.html
+- `BSD-3-Clause`：https://spdx.org/licenses/BSD-3-Clause.html
+- `BlueOak-1.0.0`：https://spdx.org/licenses/BlueOak-1.0.0.html
+- `CC-BY-4.0`：https://spdx.org/licenses/CC-BY-4.0.html
+- `CC0-1.0`：https://spdx.org/licenses/CC0-1.0.html
+- `ISC`：https://spdx.org/licenses/ISC.html
+- `MIT`：https://spdx.org/licenses/MIT.html
+- `Python-2.0`：https://spdx.org/licenses/Python-2.0.html
+- `Unlicense`：https://spdx.org/licenses/Unlicense.html
 
-- Apache-2.0 系列：React Native Android/iOS 组件、Hermes、AppAuth、Google Sign-In 支持库、GoogleUtilities、GTMAppAuth、GTMSessionFetcher、PromisesObjC、PromisesSwift、NitroModules、NitroIap 及 OpenIAP。
-- OpenSSL License / Apache-2.0：通过 `OpenSSL-Universal` 使用 OpenSSL 3.x。
-- MIT 系列：Yoga 及其上游发行版指定为 MIT 的 React 相关组件。
+## 原生发布门
 
-已提交的 Gradle 配置将 Android 仅测试依赖排除在分发运行时之外。
-
-## 必需许可文本
-
-Apache License 2.0：https://www.apache.org/licenses/LICENSE-2.0
-
-MIT License：https://opensource.org/license/mit
-
-OpenSSL 许可信息：https://www.openssl.org/source/license.html
-
-版权及署名仍归各上游作者和贡献者所有。上游声明和许可文本具有约束力；本摘要不取代其内容。
+可识别的已提交输入包括 React Native 与 Hermes 系列、AppAuth 与 Google 支持库、Nitro/OpenIAP 组件、Yoga 及 OpenSSL-Universal。已提交的 Gradle 配置排除 Android 仅测试依赖。本摘要不能替代从最终签名二进制文件生成的声明；商店发布前仍必须取得原生二进制派生报告。

@@ -8,16 +8,16 @@
       "document": "licenses",
       "source": "content/en/licenses.md",
       "page": "en/licenses/",
-      "markdown": "releases/2026-07-23.1/en/licenses.md",
-      "bytes": 8219,
-      "sha256": "24dbab5503a8eab0ac8da0597b6edb5e651918e34b0e495c73c17a300e642d9c"
+      "markdown": "https://regtechcrypto.github.io/adaivo-music-legal/releases/2026-07-23.1/en/licenses.md",
+      "bytes": 146417,
+      "sha256": "807641db923dfc2c546ec21334831594ec27e413c850deacab36d73e0c72f9c1"
     },
     {
       "locale": "en",
       "document": "privacy",
       "source": "content/en/privacy.md",
       "page": "en/privacy/",
-      "markdown": "releases/2026-07-23.1/en/privacy.md",
+      "markdown": "https://regtechcrypto.github.io/adaivo-music-legal/releases/2026-07-23.1/en/privacy.md",
       "bytes": 4195,
       "sha256": "887f5d2986a0da8aa26d620ceb02039db4e2eb15aa6d182178eb4a23fac114bb"
     },
@@ -26,7 +26,7 @@
       "document": "terms",
       "source": "content/en/terms.md",
       "page": "en/terms/",
-      "markdown": "releases/2026-07-23.1/en/terms.md",
+      "markdown": "https://regtechcrypto.github.io/adaivo-music-legal/releases/2026-07-23.1/en/terms.md",
       "bytes": 4907,
       "sha256": "fc738e5f13902d5d1b05765d2aa3fb7fa810d8b6c0da7f75743012ed04853390"
     },
@@ -35,16 +35,16 @@
       "document": "licenses",
       "source": "content/zh-Hans/licenses.md",
       "page": "zh-Hans/licenses/",
-      "markdown": "releases/2026-07-23.1/zh-Hans/licenses.md",
-      "bytes": 8061,
-      "sha256": "2fb7eb97285365cf8ff840ff7d2fab07dda5b25f1ce6ed6bab8b568012a1a1b5"
+      "markdown": "https://regtechcrypto.github.io/adaivo-music-legal/releases/2026-07-23.1/zh-Hans/licenses.md",
+      "bytes": 145001,
+      "sha256": "dc6ff258374b2417aaccccf74eefc4214d73c4da0d7c935691b43dfd5d3377c5"
     },
     {
       "locale": "zh-Hans",
       "document": "privacy",
       "source": "content/zh-Hans/privacy.md",
       "page": "zh-Hans/privacy/",
-      "markdown": "releases/2026-07-23.1/zh-Hans/privacy.md",
+      "markdown": "https://regtechcrypto.github.io/adaivo-music-legal/releases/2026-07-23.1/zh-Hans/privacy.md",
       "bytes": 3855,
       "sha256": "d0f326f73a27cb61787518e63b4d53227fae5f1fb444e86905ad4415c26160f6"
     },
@@ -53,7 +53,7 @@
       "document": "terms",
       "source": "content/zh-Hans/terms.md",
       "page": "zh-Hans/terms/",
-      "markdown": "releases/2026-07-23.1/zh-Hans/terms.md",
+      "markdown": "https://regtechcrypto.github.io/adaivo-music-legal/releases/2026-07-23.1/zh-Hans/terms.md",
       "bytes": 4304,
       "sha256": "25ba71ba7399fbebd6a5d8d6b1fdb21f40f02bae306b9007dc8d791ee6f9f73a"
     }
