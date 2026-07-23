@@ -9,8 +9,8 @@
       "source": "content/en/licenses.md",
       "page": "en/licenses/",
       "markdown": "releases/2026-07-23.1/en/licenses.md",
-      "bytes": 2840,
-      "sha256": "f6c17c51bcdd055a64bc171c609f60878f3cf68546468ea49ea7488faeaca5dd"
+      "bytes": 7439,
+      "sha256": "78f3b9547638ac331a8402b16bc13c9da29c176fca2e8077cb91653f2e35add3"
     },
     {
       "locale": "en",
@@ -18,8 +18,8 @@
       "source": "content/en/privacy.md",
       "page": "en/privacy/",
       "markdown": "releases/2026-07-23.1/en/privacy.md",
-      "bytes": 3834,
-      "sha256": "541fca498f28a2ef9a3b9efd39fcb5c30d8696fc7564ab3b2459702c09c9fbce"
+      "bytes": 4195,
+      "sha256": "887f5d2986a0da8aa26d620ceb02039db4e2eb15aa6d182178eb4a23fac114bb"
     },
     {
       "locale": "en",
@@ -36,8 +36,8 @@
       "source": "content/zh-Hans/licenses.md",
       "page": "zh-Hans/licenses/",
       "markdown": "releases/2026-07-23.1/zh-Hans/licenses.md",
-      "bytes": 2808,
-      "sha256": "fd653840152161a6faefd703a003b194c2ff91951771675904eb393b497490e4"
+      "bytes": 7425,
+      "sha256": "55505afae1b1b1a8851280d29baf59c9ad6d5036b0d5a0b17f911debcf1c6f47"
     },
     {
       "locale": "zh-Hans",
@@ -45,8 +45,8 @@
       "source": "content/zh-Hans/privacy.md",
       "page": "zh-Hans/privacy/",
       "markdown": "releases/2026-07-23.1/zh-Hans/privacy.md",
-      "bytes": 3553,
-      "sha256": "341b10f094b419910db9e75f8a9c117b1150bbf2bb69f93f2a7ceda8d1039812"
+      "bytes": 3855,
+      "sha256": "d0f326f73a27cb61787518e63b4d53227fae5f1fb444e86905ad4415c26160f6"
     },
     {
       "locale": "zh-Hans",

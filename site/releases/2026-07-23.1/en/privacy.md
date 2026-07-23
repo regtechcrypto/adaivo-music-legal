@@ -13,11 +13,11 @@ Adaivo, a sole proprietorship in Ontario, Canada, operates from Toronto. Privacy
 
 - Anonymous sessions: install or device identifiers and security tokens.
 - Accounts: identity-provider identifiers and necessary profile information.
-- Service activity: favourites, download licences, playback activity, and preferences.
-- Purchases: store, product, subscription status, and purchase-verification data. Adaivo does not store full payment-card numbers.
+- Service activity: favourites, download licences, playback state, and preferences.
+- Purchases: store, product, subscription status, and purchase-verification data. Apple and Google process store payments under their own policies. Adaivo does not store full payment-card numbers.
 - Feedback: subject, email address, description, and relevant technical context.
 - Analytics: anonymous analytics only when you opt in.
-- Operations: IP address, request, error, abuse-prevention, and security logs.
+- Operations: IP address, request time, request, error, abuse-prevention, and security logs.
 - Device storage: encrypted downloads, local keys, cache, and account-scoped device data.
 
 ## Purposes and legal bases
@@ -49,6 +49,8 @@ We use encryption, scoped access controls, security tokens, monitoring, and data
 ## Access, correction, deletion and complaints
 
 You may request access to or correction of personal information, account deletion, withdrawal of consent, or information about our practices by emailing info@adaivo.ai. We may verify identity and retain limited records where law or legitimate audit needs require. You may complain to Adaivo and, where applicable, the Office of the Privacy Commissioner of Canada or another competent regulator.
+
+When an account-deletion request is completed, Adaivo removes or de-identifies the account, favourites, and subscription state. We retain only transaction, refund, fraud, dispute, tax, or other records that law requires, or that are reasonably necessary for those approved purposes.
 
 ## Children
 

@@ -1,8 +1,9 @@
 import assert from "node:assert/strict";
 import { createHash } from "node:crypto";
-import { readFile } from "node:fs/promises";
+import { mkdtemp, readFile, readdir, rm, writeFile } from "node:fs/promises";
 import { spawnSync } from "node:child_process";
 import { resolve } from "node:path";
+import { tmpdir } from "node:os";
 
 const root = resolve(new URL("..", import.meta.url).pathname);
 const locales = ["en", "zh-Hans"];
@@ -12,6 +13,26 @@ const required = {
   privacy: ["Operator", "Information", "Purposes", "Providers", "Cross-border", "Retention", "Security", "Access", "Children", "Changes", "Contact"],
   licenses: ["Scope", "Runtime", "Native", "license"]
 };
+const runtimeInventory = [
+  ["@invertase/react-native-apple-authentication", "2.5.1", "Apache-2.0"],
+  ["@react-native-camera-roll/camera-roll", "7.10.2", "MIT"],
+  ["@react-native-clipboard/clipboard", "1.16.3", "MIT"],
+  ["@react-native-community/push-notification-ios", "1.12.0", "MIT"],
+  ["@react-native-google-signin/google-signin", "16.1.2", "MIT"],
+  ["@react-native/new-app-screen", "0.86.0", "MIT"],
+  ["@react-navigation/bottom-tabs", "7.18.8", "MIT"],
+  ["@react-navigation/native", "7.3.8", "MIT"],
+  ["@react-navigation/native-stack", "7.17.10", "MIT"],
+  ["buffer", "6.0.3", "MIT"], ["react", "19.2.3", "MIT"], ["react-native", "0.86.0", "MIT"],
+  ["react-native-app-auth", "8.4.1", "MIT"], ["react-native-blob-util", "0.24.10", "MIT"],
+  ["react-native-get-random-values", "2.0.0", "MIT"], ["react-native-iap", "15.4.1", "MIT"],
+  ["react-native-keychain", "10.0.0", "MIT"], ["react-native-nitro-modules", "0.35.10", "MIT"],
+  ["react-native-qrcode-svg", "6.3.21", "MIT"], ["react-native-quick-base64", "3.0.1", "MIT"],
+  ["react-native-quick-crypto", "1.1.6", "MIT"], ["react-native-safe-area-context", "5.8.0", "MIT"],
+  ["react-native-screens", "4.26.0", "MIT"], ["react-native-share", "12.2.5", "MIT"],
+  ["react-native-svg", "15.15.5", "MIT"], ["react-native-track-player", "4.1.2", "Apache-2.0"],
+  ["react-native-view-shot", "5.1.1", "MIT"], ["uuid", "14.0.1", "MIT"]
+];
 
 function metadataArgs() {
   const value = (name, fallback) => {
@@ -31,9 +52,49 @@ export function validateSource(text, locale, document, release, effectiveDate) {
   for (const match of text.matchAll(/https?:\/\/[^\s)`]+/g)) {
     const url = new URL(match[0]);
     assert.equal(url.protocol, "https:", `${locale}/${document}: non-HTTPS URL`);
-    assert(["www.apache.org", "opensource.org", "www.openssl.org"].includes(url.hostname), `${locale}/${document}: URL host not allowlisted`);
+    assert(["registry.npmjs.org", "www.apache.org", "opensource.org", "www.openssl.org"].includes(url.hostname), `${locale}/${document}: URL host not allowlisted`);
   }
   if (document === "licenses") assert(!/Adaivo.{0,50}(is open source|licensed under (the )?(MIT|Apache))/i.test(text), `${locale}/${document}: Adaivo content marked OSS`);
+  if (document === "licenses") for (const [name, version, license] of runtimeInventory) {
+    const archiveName = name.includes("/") ? name.split("/").at(-1) : name;
+    const resolvedSource = `https://registry.npmjs.org/${name}/-/${archiveName}-${version}.tgz`;
+    assert(text.includes(`\`${name}\``), `${locale}/${document}: missing runtime package ${name}`);
+    assert(text.includes(`\`${version}\``), `${locale}/${document}: missing runtime version ${name}@${version}`);
+    assert(text.includes(`\`${license}\``), `${locale}/${document}: missing runtime license ${name}`);
+    assert(text.includes(resolvedSource), `${locale}/${document}: missing resolved runtime source ${name}`);
+  }
+  if (document === "licenses") {
+    assert.equal([...text.matchAll(/^- `[^`]+` .*https:\/\/registry\.npmjs\.org\//gm)].length, runtimeInventory.length, `${locale}/${document}: runtime inventory count mismatch`);
+    assert(text.includes(locale === "en" ? "copyright: Not recorded" : "版权：未记录"), `${locale}/${document}: missing explicit unavailable copyright marker`);
+  }
+}
+
+async function listFiles(base, relative = "") {
+  const output = [];
+  for (const entry of await readdir(resolve(base, relative), { withFileTypes: true })) {
+    const next = relative ? `${relative}/${entry.name}` : entry.name;
+    if (entry.isDirectory()) output.push(...await listFiles(base, next));
+    else output.push(next);
+  }
+  return output.sort();
+}
+
+async function verifyDeterministicBuild(release, effectiveDate) {
+  const isolated = await mkdtemp(resolve(tmpdir(), "adaivo-legal-"));
+  try {
+    const build = spawnSync(process.execPath, ["scripts/build-manifest.mjs", "--release", release, "--effective-date", effectiveDate, "--output-dir", isolated], { cwd: root, encoding: "utf8" });
+    assert.equal(build.status, 0, build.stderr);
+    const expectedPaths = ["manifest.json", ...await listFiles(isolated, "site")];
+    const actualPaths = ["manifest.json", ...await listFiles(root, "site")];
+    assert.deepEqual(actualPaths, expectedPaths, "generated file set differs from isolated rebuild");
+    for (const path of expectedPaths) {
+      const expected = await readFile(resolve(isolated, path));
+      const actual = await readFile(resolve(root, path));
+      assert(expected.equals(actual), `generated file differs from isolated rebuild: ${path}`);
+    }
+  } finally {
+    await rm(isolated, { recursive: true, force: true });
+  }
 }
 
 async function verify() {
@@ -58,6 +119,7 @@ async function verify() {
   }
   const index = await readFile(resolve(root, "site/index.html"), "utf8");
   for (const entry of manifest.documents) assert(index.includes(`href="${entry.page}"`), `broken index link ${entry.page}`);
+  await verifyDeterministicBuild(release, effectiveDate);
 }
 
 if (process.argv.includes("--self-test")) {
@@ -65,6 +127,28 @@ if (process.argv.includes("--self-test")) {
   assert.throws(() => validateSource("# Privacy\n2026-07-23.1 2026-07-23 <script>", "en", "privacy", "2026-07-23.1", "2026-07-23"), /raw HTML/);
   const build = spawnSync(process.execPath, ["scripts/build-manifest.mjs", "--release", "2026-07-23.1", "--effective-date", "2026-07-23"], { cwd: root, encoding: "utf8" });
   assert.equal(build.status, 0, build.stderr);
+  const generatedIndex = resolve(root, "site/index.html");
+  const originalIndex = await readFile(generatedIndex, "utf8");
+  try {
+    await writeFile(generatedIndex, `${originalIndex}mutated`);
+    const mutated = spawnSync(process.execPath, ["scripts/verify-legal-release.mjs", "--release", "2026-07-23.1", "--effective-date", "2026-07-23"], { cwd: root, encoding: "utf8" });
+    assert.notEqual(mutated.status, 0, "verifier must reject mutated generated output");
+  } finally {
+    await writeFile(generatedIndex, originalIndex);
+  }
+  const licensesSource = resolve(root, "content/en/licenses.md");
+  const originalLicenses = await readFile(licensesSource, "utf8");
+  try {
+    await writeFile(licensesSource, `${originalLicenses}\nhttps://www.apache.org/licenses/LICENSE-2.0\"onmouseover=\"alert\n`);
+    const hostileBuild = spawnSync(process.execPath, ["scripts/build-manifest.mjs", "--release", "2026-07-23.1", "--effective-date", "2026-07-23"], { cwd: root, encoding: "utf8" });
+    assert.equal(hostileBuild.status, 0, hostileBuild.stderr);
+    const hostilePage = await readFile(resolve(root, "site/en/licenses/index.html"), "utf8");
+    assert(!hostilePage.includes('href=\"https://www.apache.org/licenses/LICENSE-2.0\"onmouseover='), "href attribute must escape hostile quotes");
+  } finally {
+    await writeFile(licensesSource, originalLicenses);
+    const restore = spawnSync(process.execPath, ["scripts/build-manifest.mjs", "--release", "2026-07-23.1", "--effective-date", "2026-07-23"], { cwd: root, encoding: "utf8" });
+    assert.equal(restore.status, 0, restore.stderr);
+  }
 }
 await verify();
 console.log("legal release verification passed");
