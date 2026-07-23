@@ -146,6 +146,7 @@ async function verify() {
   for (const entry of manifest.documents) assert(index.includes(`href="${entry.page}"`), `broken index link ${entry.page}`);
   assert(index.includes(`href="assets/legal.css?v=${cssFingerprint}"`), "index stylesheet fingerprint mismatch");
   assert(css.includes("main a{overflow-wrap:anywhere;word-break:break-word}"), "main-content links must wrap at narrow viewports");
+  assert(css.includes("main li{overflow-wrap:anywhere;word-break:break-word}"), "main-content list text must wrap at narrow viewports");
   await verifyDeterministicBuild(release, effectiveDate);
 }
 
